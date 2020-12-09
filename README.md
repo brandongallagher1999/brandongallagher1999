@@ -9,8 +9,6 @@ Hello, my name is **Brandon** and I'm a passionate software developer that is cu
 - ⚡ **OMCI**: Full Stack Developer - May 2019 ~ Sept 2019
 - ⚡ **Ontario Tech University**: Emerging Technologies Developer - Sept 2018 ~ April 2019
 
-[e-mail](brandonegallagher@gmail.com)
-
 ### Languages/Frameworks:
 
 <a href="#"><img align="left" alt="Java" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/java/java.png" /></a>
