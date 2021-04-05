@@ -5,7 +5,7 @@ Hello, my name is **Brandon** and I'm a passionate software developer that is cu
 
 ### 🔭 Experience
 
-- ⚡ **Royal Bank of Canada**: Software Developer Internship - Sept 2019 ~ Dec 2019
+- ⚡ **Royal Bank of Canada**: DevOps Engineer - Sept 2019 ~ Dec 2019
 - ⚡ **OMCI**: Full Stack Developer - May 2019 ~ Sept 2019
 - ⚡ **Ontario Tech University**: Emerging Technologies Developer - Sept 2018 ~ April 2019
 
