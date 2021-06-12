@@ -1,7 +1,7 @@
 
 ### Hi there 👋
 
-Hello, my name is **Brandon** and I'm a passionate software developer that is currently looking for remote opportunities. Some of my most accomplished projects are a Torrenting website that allows users to look up specific torrents from ThePirateBay, as well as a 1337x.to torrenting Discord Bot that is currently being used by over 10,000+ users (Hosted on AWS EC2 Instance)
+Hello, my name is **Brandon** and I'm a passionate software developer that is currently working @ Deloitte as a Software Engineer. Some of my most accomplished projects are a Torrenting website that allows users to look up specific torrents from ThePirateBay, as well as a 1337x.to torrenting Discord Bot that is currently being used by over 10,000+ users (Hosted on AWS EC2 Instance)
 
  [![](https://komarev.com/ghpvc/?username=brandongallagher1999&style=flat-square&label=Profile+Views)](https://github.com/antonkomarev/github-profile-views-counter)
 
