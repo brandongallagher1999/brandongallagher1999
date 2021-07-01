@@ -6,6 +6,7 @@ Hello, my name is **Brandon** and I'm a passionate software developer that is cu
  [![](https://komarev.com/ghpvc/?username=brandongallagher1999&style=flat-square&label=Profile+Views)](https://github.com/antonkomarev/github-profile-views-counter)
 
 ### 🔭 Experience
+- ⚡ **Deloitte**: Software Engineer - June 2021 ~ Present
 - ⚡ **Royal Bank of Canada**: DevOps Engineer - Sept 2019 ~ Dec 2019
 - ⚡ **OMCI**: Full Stack Developer - May 2019 ~ Sept 2019
 - ⚡ **Ontario Tech University**: Emerging Technologies Developer - Sept 2018 ~ April 2019
