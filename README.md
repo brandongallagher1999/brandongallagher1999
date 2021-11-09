@@ -4,10 +4,10 @@
 Hello, my name is **Brandon** and I'm a passionate software developer that is currently working @ Deloitte as a Software Engineer. Some of my most accomplished projects are a Torrenting website that allows users to look up specific torrents from ThePirateBay, as well as a 1337x.to torrenting Discord Bot that is currently being used by over 10,000+ users (Hosted on Azure, previously on AWS EC2 Instance)
 
 ### 🔭 Experience
-- ⚡ **Deloitte**: Software Engineer - June 2021 ~ November 2021
-- ⚡ **Royal Bank of Canada**: DevOps Engineer - Sept 2019 ~ Dec 2019
-- ⚡ **OMCI**: Full Stack Developer - May 2019 ~ Sept 2019
-- ⚡ **Ontario Tech University**: Emerging Technologies Developer - Sept 2018 ~ April 2019
+- ⚡ **Deloitte**: Software Engineer -  2021 ~ 2021
+- ⚡ **Royal Bank of Canada**: DevOps Engineer - 2019 ~ 2019
+- ⚡ **OMCI**: Full Stack Developer - 2019 ~ 2019
+- ⚡ **Ontario Tech University**: Emerging Technologies Developer - 2018 ~ 2019
 
 ### Languages:
 
