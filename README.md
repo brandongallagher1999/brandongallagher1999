@@ -1,7 +1,7 @@
 
 ### Hi there 👋
 
-Hello, my name is **Brandon**. I do DevOps consulting work.
+Hello, my name is **Brandon**. I'm a DevOps consultant.
 
 
 Technologies that I specialize in:
