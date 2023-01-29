@@ -1,7 +1,7 @@
 
 ### Hi there 👋
 
-Hello, my name is **Brandon**. I'm a DevOps consultant.
+Hello, my name is **Brandon**. I'm a DevOps/Cloud/SRE consultant. For any consulting inquiries, please use the email address listed on my profile.
 
 
 Technologies that I specialize in:
