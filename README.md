@@ -1,7 +1,7 @@
 
 ### Hi there 👋
 
-Hello, my name is **Brandon**. I'm a DevOps/Cloud/SRE consultant. For any consulting inquiries, please use the email address listed on my profile.
+Hello, my name is **Brandon**. I'm a DevOps/Cloud/SRE consultant. For any consulting inquiries, please email me at: brandonegallagher@gmail.com
 
 
 Technologies that I specialize in:
