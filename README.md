@@ -41,3 +41,7 @@ Technologies that I specialize in:
 
 ### Scripting Languages:
 - ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+
+### Alerting
+- [![SendGrid](https://img.shields.io/badge/-SendGrid-039be5?style=for-the-badge&logo=sendgrid&logoColor=white&labelColor=101010)](https://sendgrid.com/)
+
