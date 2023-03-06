@@ -28,7 +28,7 @@ Technologies that I specialize in:
 - ![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-000?style=for-the-badge&logo=apachekafka)
 
 ### Databases:
-- ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Sever-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
+- ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 - ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### Frameworks:
@@ -42,6 +42,6 @@ Technologies that I specialize in:
 ### Scripting Languages:
 - ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
-### Alerting
+### Alerting:
 - [![SendGrid](https://img.shields.io/badge/-SendGrid-039be5?style=for-the-badge&logo=sendgrid&logoColor=white&labelColor=101010)](https://sendgrid.com/)
 
