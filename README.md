@@ -20,8 +20,7 @@ Technologies that I specialize in:
 ### Monitoring:
 - ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)
 - ![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)
-- ![Grafana Loki](https://img.shields.io/badge/Grafana%20Loki-181717?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTMgMTMiIGhlaWdodD0iMTMiIHdpZHRoPSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj4KICA8cGF0aCBkPSJNLTEuNTkgNGMwLTEuMjE4LTAuOTUyLTIuMTY1LTIuMTY1LTIuMTY1Uy0yLjE2NSA4LjY5OS0xLjU5IDQuNCAxLjU5YzEuMjE4IDAgMi4xNjUgMC45NTIgMi4xNjUgMi4xNjVzLTAuOTUyIDIuMTY1LTIuMTY1IDIuMTY1Uy04LjY5OSAxLjU5LTEuNTkgMC40LTMiLz4KICA8cGF0aCBkPSJNLTYuNSAxYzAgMS4zMDgtMS45NTIgMi4xNjUtMi4xNjUgMi4xNjVzLTAuOTUyIDIuMTY1LTIuMTY1IDIuMTY1Uy04LjY5OSAxLjU5LTEuNTkgNi41IDEiLz4KICA8cGF0aCBkPSJNLTEwIDBoMTN2MTNIMHoiLz4KPC9zdmc+&logoColor=F46800)
-
+- ![Loki](https://img.shields.io/badge/loki-%23323330.svg?style=for-the-badge&logo=loki&logoColor=white)
 
 ### Continuous Integration / Continuous Deployment:
 - ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
@@ -30,8 +29,8 @@ Technologies that I specialize in:
 - ![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-000?style=for-the-badge&logo=apachekafka)
 
 ### Databases:
-- ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 - ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+- ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Frameworks:
 - ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
