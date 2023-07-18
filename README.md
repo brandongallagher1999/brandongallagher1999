@@ -10,7 +10,7 @@ Technologies that I specialize in:
 - ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
 
 ### Infrastructure as Code:
-- [![Pulumi](https://img.shields.io/badge/pulumi-%235835CC.svg?style=for-the-badge&logo=pulumi&logoColor=white)](https://www.pulumi.com/)
+- [![Pulumi](https://img.shields.io/badge/Pulumi-%23FF4500.svg?style=for-the-badge&logo=pulumi&logoColor=white)](https://www.pulumi.com/)
 - ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 
 ### Containerization / Orchestration:
