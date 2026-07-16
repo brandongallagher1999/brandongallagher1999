@@ -444,10 +444,10 @@
         padding: 0;
         display: grid;
         gap: 1.25rem 2.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
 
-      .focus__list li {
+      .focus__list > li {
         padding-top: 1rem;
         border-top: 1px solid rgba(244, 241, 234, 0.14);
       }
@@ -461,8 +461,31 @@
       }
 
       .focus__list span {
+        display: block;
+        margin-bottom: 0.85rem;
         font-size: 0.95rem;
         color: var(--cream-muted);
+      }
+
+      .focus__tools {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .focus__tools li {
+        padding: 0.35rem 0.65rem;
+        border: 1px solid rgba(244, 241, 234, 0.12);
+        border-radius: 2px;
+        background: rgba(28, 29, 29, 0.45);
+        font-size: 0.78rem;
+        font-weight: 500;
+        line-height: 1.3;
+        color: var(--cream-muted);
+        white-space: nowrap;
       }
 
       /* —— Contact —— */
@@ -913,6 +936,11 @@
               >Secure agentic harnesses with strict containment and automated
               governance for enterprise AI deployments.</span
             >
+            <ul class="focus__tools" aria-label="Agentic Control Planes technologies">
+              <li>LangGraph</li>
+              <li>agentgateway</li>
+              <li>vLLM</li>
+            </ul>
           </li>
           <li>
             <strong>Compliant landing zones</strong>
@@ -920,6 +948,18 @@
               >Azure hub-and-spoke, Terraform + Sentinel, and CI/CD that encode
               PCI-DSS, SOC 2, and NIST natively.</span
             >
+            <ul class="focus__tools" aria-label="Compliant landing zones technologies">
+              <li>Azure</li>
+              <li>AWS</li>
+              <li>GCP</li>
+              <li>Terraform</li>
+              <li>Terraform Cloud</li>
+              <li>Sentinel</li>
+              <li>AWS Control Tower</li>
+              <li>PCI-DSS</li>
+              <li>SOC 2</li>
+              <li>NIST 800-53</li>
+            </ul>
           </li>
           <li>
             <strong>Kubernetes at scale</strong>
@@ -927,6 +967,16 @@
               >Production AKS clusters with Helm, RBAC, and geo-redundant
               delivery proven across banks serving 30M+ users.</span
             >
+            <ul class="focus__tools" aria-label="Kubernetes at scale technologies">
+              <li>Kubernetes</li>
+              <li>AKS</li>
+              <li>Helm</li>
+              <li>Docker</li>
+              <li>Azure Container Apps</li>
+              <li>GitHub Actions</li>
+              <li>GitHub Enterprise</li>
+              <li>Azure DevOps</li>
+            </ul>
           </li>
         </ul>
       </div>
