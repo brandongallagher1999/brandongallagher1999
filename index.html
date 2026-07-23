@@ -437,8 +437,8 @@
         justify-content: flex-start;
         gap: 0;
         flex-shrink: 0;
-        width: 18rem;
-        min-height: 11rem;
+        width: 20.75rem;
+        min-height: 15.5rem;
         padding: 1rem 1.15rem 1.1rem;
         border: 1px solid rgba(244, 241, 234, 0.12);
         border-radius: 3px;
@@ -477,18 +477,65 @@
         filter: brightness(1.35) contrast(1.05);
       }
 
-      .client-card__note {
-        margin: 0;
-        padding-top: 0.8rem;
-        border-top: 1px solid rgba(244, 241, 234, 0.08);
+      .client-card__meta {
+        display: grid;
+        gap: 0.6rem;
         flex: 1;
-        font-size: 0.8125rem;
+        margin: 0.8rem 0 0;
+        padding: 0.8rem 0 0;
+        border-top: 1px solid rgba(244, 241, 234, 0.08);
+      }
+
+      .client-card__meta div {
+        margin: 0;
+      }
+
+      .client-card__meta dt {
+        margin: 0 0 0.15rem;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--leather);
+      }
+
+      .client-card__meta dd {
+        margin: 0;
+        font-size: 0.8rem;
         font-weight: 400;
-        line-height: 1.55;
+        line-height: 1.5;
         letter-spacing: 0.01em;
         color: var(--cream-muted);
-        text-align: left;
         text-wrap: pretty;
+      }
+
+      .client-card__tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0.75rem 0 0;
+        padding: 0.65rem 0 0;
+        border-top: 1px solid rgba(244, 241, 234, 0.08);
+        list-style: none;
+      }
+
+      .client-card__tech li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.85rem;
+        height: 1.85rem;
+        padding: 0.3rem;
+        border: 1px solid rgba(244, 241, 234, 0.12);
+        border-radius: 3px;
+        background: rgba(244, 241, 234, 0.08);
+      }
+
+      .client-card__tech img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       /* —— Focus —— */
@@ -902,53 +949,154 @@
         <div class="carousel" role="region" aria-label="Selected client work">
           <div class="carousel__track">
             <div class="carousel__group">
-              <article class="client-card" aria-label="Scotiabank: Engineered an enterprise Agentic Control Plane in partnership with the AI Consortium">
+              <article class="client-card" aria-label="Scotiabank: Shipped an enterprise Agentic Control Plane with the AI Consortium">
                 <div class="client-card__mark">
                   <img src="assets/logos/scotiabank.png" alt="Scotiabank" width="934" height="170" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Engineered an enterprise Agentic Control Plane in partnership with the AI Consortium
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Shipped an enterprise Agentic Control Plane with the AI Consortium—governable, production-ready LLM workloads</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Host/service architecture with an enterprise control plane over open-source alternatives</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Pressure-test vendor deploy-readiness before integration—underestimating maturity delays everything</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-label="Technologies used">
+                  <li><img src="assets/logos/tech/gcp.svg" alt="Google Cloud" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/langgraph.svg" alt="LangGraph" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
-              <article class="client-card" aria-label="CIBC: Led the migration of 160+ repositories from Jenkins to GitHub Actions">
+              <article class="client-card" aria-label="CIBC: Migrated 160+ repositories to GitHub Actions">
                 <div class="client-card__mark">
                   <img src="assets/logos/cibc.png" alt="CIBC" width="600" height="154" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Led the migration of 160+ repositories from Jenkins to GitHub Actions
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Migrated 160+ repositories to GitHub Actions—saved 1,200+ engineering hours/year via AI auto-remediation</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Org-wide shared workflows over per-repo pipelines—mandatory compliance scripts could not be bypassed</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Align Node runtimes across teams before enterprise rollouts—version drift blocks adoption overnight</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-label="Technologies used">
+                  <li><img src="assets/logos/tech/githubactions.svg" alt="GitHub Actions" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/github.svg" alt="GitHub" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/openshift.svg" alt="OpenShift" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/nodedotjs.svg" alt="Node.js" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
-              <article class="client-card client-card--muted" aria-label="Haventree Bank: Architected a Tier 1 CDIC-insured fintech platform on Azure from landing zone to production Kubernetes">
+              <article class="client-card client-card--muted" aria-label="Haventree Bank: Delivered a Tier 1 CDIC-insured fintech platform on Azure">
                 <div class="client-card__mark">
                   <img src="assets/logos/haventree.png" alt="Haventree Bank" width="1024" height="339" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Architected a Tier 1 CDIC-insured fintech platform on Azure—from landing zone to production Kubernetes
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Delivered a Tier 1 CDIC-insured fintech platform on Azure—PCI-DSS, SOC 2, and NIST from greenfield to production</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Container Apps for managed TLS and autoscaling; Terraform Stacks for reusable IaC; Azure Firewall over Palo Alto</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Bake compliance into IaC from day one—auditors follow the architecture, not a wiki</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-label="Technologies used">
+                  <li><img src="assets/logos/tech/azure.svg" alt="Azure" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/docker.svg" alt="Docker" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
-              <article class="client-card" aria-label="Interac: Architected an AWS Control Tower landing zone in Terraform for e-Transfer, serving 30M+ Canadians">
+              <article class="client-card" aria-label="Interac: Built AWS Control Tower landing zone for e-Transfer">
                 <div class="client-card__mark">
                   <img src="assets/logos/interac.png" alt="Interac" width="161" height="114" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Architected an AWS Control Tower landing zone in Terraform for e-Transfer, serving 30M+ Canadians
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Built AWS Control Tower landing zone in Terraform for e-Transfer—consistent governance for 30M+ Canadians</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Control Tower plus Terraform over ad-hoc account provisioning</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Landing zones only scale when account vending is self-service—not ticket-driven</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-label="Technologies used">
+                  <li><img src="assets/logos/tech/aws.svg" alt="AWS" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/hashicorp.svg" alt="HashiCorp" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
-              <article class="client-card" aria-label="RBC: Automated resolution of 5,000+ Jira IAM requests through enterprise scripting">
+              <article class="client-card" aria-label="RBC: Automated 5,000+ IAM Jira requests on OpenShift">
                 <div class="client-card__mark">
                   <img src="assets/logos/rbc.png" alt="RBC" width="232" height="290" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Automated resolution of 5,000+ Jira IAM requests through enterprise scripting
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Automated 5,000+ IAM Jira requests on OpenShift—cleared a recurring ops bottleneck without adding headcount</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Node.js microservice automation over manual ticket queues</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>High-volume IAM is a pattern problem—automate the workflow, not individual tickets</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-label="Technologies used">
+                  <li><img src="assets/logos/tech/openshift.svg" alt="OpenShift" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/nodedotjs.svg" alt="Node.js" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/jira.svg" alt="Jira" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
-              <article class="client-card" aria-label="Deloitte: Delivered Canada Post’s nationwide track-and-trace platform">
+              <article class="client-card" aria-label="Deloitte: Delivered Canada Post national track-and-trace platform">
                 <div class="client-card__mark">
                   <img src="assets/logos/deloitte.png" alt="Deloitte" width="685" height="130" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Delivered Canada Post’s nationwide track-and-trace platform
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Delivered Canada Post's national track-and-trace platform—real-time data integrity for 35M+ Canadians</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Kafka stream-validation microservices over batch-only reconciliation</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Catch bad data at ingress—every downstream consumer pays for upstream gaps</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-label="Technologies used">
+                  <li><img src="assets/logos/tech/apachekafka.svg" alt="Apache Kafka" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/typescript.svg" alt="TypeScript" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/nodedotjs.svg" alt="Node.js" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
             </div>
             <div class="carousel__group" aria-hidden="true">
@@ -956,49 +1104,150 @@
                 <div class="client-card__mark">
                   <img src="assets/logos/scotiabank.png" alt="" width="934" height="170" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Engineered an enterprise Agentic Control Plane in partnership with the AI Consortium
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Shipped an enterprise Agentic Control Plane with the AI Consortium—governable, production-ready LLM workloads</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Host/service architecture with an enterprise control plane over open-source alternatives</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Pressure-test vendor deploy-readiness before integration—underestimating maturity delays everything</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-hidden="true">
+                  <li><img src="assets/logos/tech/gcp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/langgraph.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
               <article class="client-card" tabindex="-1">
                 <div class="client-card__mark">
                   <img src="assets/logos/cibc.png" alt="" width="600" height="154" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Led the migration of 160+ repositories from Jenkins to GitHub Actions
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Migrated 160+ repositories to GitHub Actions—saved 1,200+ engineering hours/year via AI auto-remediation</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Org-wide shared workflows over per-repo pipelines—mandatory compliance scripts could not be bypassed</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Align Node runtimes across teams before enterprise rollouts—version drift blocks adoption overnight</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-hidden="true">
+                  <li><img src="assets/logos/tech/githubactions.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/github.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
               <article class="client-card client-card--muted" tabindex="-1">
                 <div class="client-card__mark">
                   <img src="assets/logos/haventree.png" alt="" width="1024" height="339" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Architected a Tier 1 CDIC-insured fintech platform on Azure—from landing zone to production Kubernetes
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Delivered a Tier 1 CDIC-insured fintech platform on Azure—PCI-DSS, SOC 2, and NIST from greenfield to production</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Container Apps for managed TLS and autoscaling; Terraform Stacks for reusable IaC; Azure Firewall over Palo Alto</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Bake compliance into IaC from day one—auditors follow the architecture, not a wiki</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-hidden="true">
+                  <li><img src="assets/logos/tech/azure.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/docker.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
               <article class="client-card" tabindex="-1">
                 <div class="client-card__mark">
                   <img src="assets/logos/interac.png" alt="" width="161" height="114" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Architected an AWS Control Tower landing zone in Terraform for e-Transfer, serving 30M+ Canadians
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Built AWS Control Tower landing zone in Terraform for e-Transfer—consistent governance for 30M+ Canadians</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Control Tower plus Terraform over ad-hoc account provisioning</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Landing zones only scale when account vending is self-service—not ticket-driven</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-hidden="true">
+                  <li><img src="assets/logos/tech/aws.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/hashicorp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
               <article class="client-card" tabindex="-1">
                 <div class="client-card__mark">
                   <img src="assets/logos/rbc.png" alt="" width="232" height="290" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Automated resolution of 5,000+ Jira IAM requests through enterprise scripting
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Automated 5,000+ IAM Jira requests on OpenShift—cleared a recurring ops bottleneck without adding headcount</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Node.js microservice automation over manual ticket queues</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>High-volume IAM is a pattern problem—automate the workflow, not individual tickets</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-hidden="true">
+                  <li><img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/jira.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
               <article class="client-card" tabindex="-1">
                 <div class="client-card__mark">
                   <img src="assets/logos/deloitte.png" alt="" width="685" height="130" loading="lazy" decoding="async" />
                 </div>
-                <p class="client-card__note">
-                  Delivered Canada Post’s nationwide track-and-trace platform
-                </p>
+                <dl class="client-card__meta">
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>Delivered Canada Post's national track-and-trace platform—real-time data integrity for 35M+ Canadians</dd>
+                  </div>
+                  <div>
+                    <dt>Decisions</dt>
+                    <dd>Kafka stream-validation microservices over batch-only reconciliation</dd>
+                  </div>
+                  <div>
+                    <dt>Lessons</dt>
+                    <dd>Catch bad data at ingress—every downstream consumer pays for upstream gaps</dd>
+                  </div>
+                </dl>
+                <ul class="client-card__tech" aria-hidden="true">
+                  <li><img src="assets/logos/tech/apachekafka.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/typescript.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                  <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                </ul>
               </article>
             </div>
           </div>
