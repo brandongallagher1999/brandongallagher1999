@@ -481,6 +481,7 @@
         margin: 0;
         padding: 0;
         display: grid;
+        align-items: stretch;
         gap: 1.25rem;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
@@ -489,10 +490,45 @@
         display: flex;
         flex-direction: column;
         gap: 0.65rem;
+        height: 100%;
         padding: 1.25rem 1.2rem 1.3rem;
         border: 1px solid rgba(244, 241, 234, 0.14);
         border-radius: 2px;
         background: rgba(18, 19, 19, 0.55);
+      }
+
+      .now__card-head {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        flex: 0 0 auto;
+      }
+
+      .now__brand {
+        display: flex;
+        align-items: center;
+        height: 3.5rem;
+      }
+
+      .now__brand img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      .now__brand--nezz img {
+        height: 3rem;
+        max-width: 9.5rem;
+        border-radius: 3px;
+      }
+
+      .now__brand--ravl img {
+        height: 2.85rem;
+        max-width: 8.75rem;
+        border-radius: 3px;
+        box-shadow: inset 0 0 0 1px rgba(18, 19, 19, 0.08);
       }
 
       .now__status {
@@ -500,12 +536,12 @@
         font-size: 0.72rem;
         font-weight: 600;
         letter-spacing: 0.12em;
-        text-transform: uppercase;
         color: var(--leather);
       }
 
       .now__card h3 {
         margin: 0;
+        min-height: 2.5em;
         font-size: 1.08rem;
         font-weight: 600;
         letter-spacing: -0.015em;
@@ -514,13 +550,105 @@
         text-wrap: balance;
       }
 
-      .now__card p {
+      .now__card-copy {
         margin: 0;
-        flex: 1;
+        flex: 1 1 auto;
         font-size: 0.92rem;
         line-height: 1.5;
         color: var(--cream-muted);
         text-wrap: pretty;
+      }
+
+      .now__card-foot {
+        display: grid;
+        grid-template-rows: auto minmax(5.15rem, 1fr);
+        gap: 0.45rem;
+        flex: 0 0 auto;
+        margin-top: auto;
+        min-height: 6.75rem;
+      }
+
+      .now__foot-label {
+        margin: 0;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--leather);
+      }
+
+      .now__card-foot .now__badges {
+        align-self: end;
+      }
+
+      .now__badges {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.65rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .now__badges li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.35rem 0.5rem;
+        border: 1px solid rgba(244, 241, 234, 0.35);
+        border-radius: 3px;
+        background: var(--cream);
+      }
+
+      .now__badges--logos li {
+        height: 2.25rem;
+        padding: 0.25rem 0.4rem;
+      }
+
+      .now__badges--logos .now__badge--amex img {
+        width: auto;
+        height: 1.7rem;
+        max-width: 100%;
+      }
+
+      .now__badges--logos .now__badge--mastercard img {
+        width: auto;
+        height: 1.55rem;
+        max-width: 100%;
+      }
+
+      .now__badges--tools li {
+        flex-direction: column;
+        gap: 0.18rem;
+        height: 3.2rem;
+      }
+
+      .now__badges img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .now__badges--tools img {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      .now__badges--tools .now__badge-mark--wide {
+        width: 100%;
+        height: 1.25rem;
+      }
+
+      .now__badges--tools span {
+        color: var(--charcoal);
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
       }
 
       .now__meta {
@@ -585,24 +713,96 @@
 
       .carousel {
         position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .carousel:focus-visible {
+        outline: 2px solid rgba(196, 160, 122, 0.55);
+        outline-offset: 4px;
+      }
+
+      .carousel__viewport {
+        overflow: hidden;
+        cursor: grab;
+        touch-action: pan-y;
         mask-image: linear-gradient(
           to right,
           transparent,
-          #000 8%,
-          #000 92%,
+          #000 6%,
+          #000 94%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          #000 6%,
+          #000 94%,
           transparent
         );
       }
 
-      .carousel:hover .carousel__track {
-        animation-play-state: paused;
+      .carousel--dragging .carousel__viewport {
+        cursor: grabbing;
+        user-select: none;
+      }
+
+      .carousel__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.35rem;
+        height: 2.35rem;
+        padding: 0;
+        border: 1px solid rgba(244, 241, 234, 0.18);
+        border-radius: 3px;
+        background: rgba(28, 29, 29, 0.8);
+        color: var(--cream);
+        cursor: pointer;
+        transition:
+          border-color 0.2s var(--ease),
+          background-color 0.2s var(--ease),
+          transform 0.2s var(--ease);
+      }
+
+      .carousel__btn:hover {
+        border-color: rgba(196, 160, 122, 0.45);
+        background: rgba(36, 37, 37, 0.95);
+      }
+
+      .carousel__btn:active {
+        transform: scale(0.96);
+      }
+
+      .carousel__btn:focus-visible {
+        outline: 2px solid rgba(196, 160, 122, 0.55);
+        outline-offset: 2px;
+      }
+
+      .carousel__icon {
+        width: 1rem;
+        height: 1rem;
       }
 
       .carousel__track {
         display: flex;
         width: max-content;
         gap: 1rem;
+        will-change: transform;
+      }
+
+      .carousel:not(.carousel--ready) .carousel__track {
         animation: marquee 56s linear infinite;
+      }
+
+      .carousel--ready .carousel__track {
+        animation: none;
+      }
+
+      .carousel:not(.carousel--ready):hover .carousel__track {
+        animation-play-state: paused;
       }
 
       .carousel__group {
@@ -619,7 +819,7 @@
         gap: 0;
         flex-shrink: 0;
         width: 20.75rem;
-        min-height: 16.5rem;
+        min-height: 18.5rem;
         padding: 1rem 1.15rem 1.1rem;
         border: 1px solid rgba(244, 241, 234, 0.12);
         border-radius: 3px;
@@ -691,9 +891,9 @@
       }
 
       .client-card__tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.45rem;
         margin: 0.75rem 0 0;
         padding: 0.65rem 0 0;
         border-top: 1px solid rgba(244, 241, 234, 0.08);
@@ -702,49 +902,32 @@
 
       .client-card__tech li {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 1.85rem;
-        height: 1.85rem;
-        padding: 0.3rem;
-        border: 1px solid rgba(244, 241, 234, 0.12);
+        gap: 0.2rem;
+        min-height: 3.35rem;
+        padding: 0.38rem 0.45rem;
+        border: 1px solid rgba(244, 241, 234, 0.35);
         border-radius: 3px;
-        background: rgba(244, 241, 234, 0.08);
+        background: var(--cream);
       }
 
       .client-card__tech img {
         display: block;
-        width: 100%;
-        height: 100%;
+        width: 1.35rem;
+        height: 1.35rem;
         object-fit: contain;
       }
 
-      .client-card__writeup {
-        margin: 0.7rem 0 0;
-        padding: 0.55rem 0 0;
-        border-top: 1px solid rgba(244, 241, 234, 0.08);
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.01em;
-        color: var(--cream-faint);
-      }
-
-      .client-card__writeup a {
-        color: var(--leather);
-        border-bottom: 1px solid transparent;
-        transition:
-          color 0.2s var(--ease),
-          border-color 0.2s var(--ease);
-      }
-
-      .client-card__writeup a:hover {
-        color: var(--cream);
-        border-bottom-color: rgba(196, 160, 122, 0.55);
-      }
-
-      .client-card__writeup a:focus-visible {
-        outline: 2px solid var(--focus);
-        outline-offset: 3px;
+      .client-card__tech span {
+        color: var(--charcoal);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
       }
 
       #writeups {
@@ -1040,6 +1223,14 @@
           flex-direction: column;
           align-items: flex-start;
         }
+
+        .carousel {
+          grid-template-columns: 1fr;
+        }
+
+        .carousel__btn {
+          display: none;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -1068,8 +1259,20 @@
           box-shadow: none;
         }
 
-        .carousel__track {
+        .carousel--ready .carousel__track {
           animation: none;
+        }
+
+        .carousel__viewport {
+          overflow-x: auto;
+          scroll-snap-type: x proximity;
+          cursor: auto;
+          mask-image: none;
+          -webkit-mask-image: none;
+        }
+
+        .client-card {
+          scroll-snap-align: start;
         }
       }
     </style>
@@ -1247,22 +1450,61 @@
         </p>
         <ul class="now__grid">
           <li class="now__card">
-            <p class="now__status">In build</p>
-            <h3>Programmable escrow &amp; settlement orchestration</h3>
-            <p>
+            <div class="now__card-head">
+              <div class="now__brand now__brand--nezz">
+                <img src="assets/logos/nezz.png" alt="Nezz" width="438" height="190" loading="lazy" decoding="async" />
+              </div>
+              <p class="now__status">CTO &amp; Co-Founder</p>
+              <h3>Programmable escrow &amp; settlement orchestration</h3>
+            </div>
+            <p class="now__card-copy">
               Greenfield financial orchestration layer—deterministic state machines,
               multi-party settlement paths, and audit-ready event trails from day one.
+              Our cap table includes MIT Innovation Labs advisors and angel investors
+              who have held C-level roles at AstraZeneca, BMO, Amex, and Mastercard,
+              with additional leaders from MIT and Harvard in the network.
             </p>
-            <p class="now__meta">Financial rails · compliance-first IaC · event-sourced control</p>
+            <div class="now__card-foot">
+              <p class="now__foot-label">Backed by</p>
+              <ul class="now__badges now__badges--logos" aria-label="Investor and advisor affiliations">
+                <li><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Astrazeneca%20text%20logo.svg" alt="AstraZeneca" width="300" height="43" loading="lazy" decoding="async" /></li>
+                <li><img src="https://commons.wikimedia.org/wiki/Special:FilePath/BMO%20Logo.svg" alt="BMO" width="144" height="50" loading="lazy" decoding="async" /></li>
+                <li class="now__badge--amex"><img src="assets/logos/investor-affiliations/americanexpress.svg" alt="American Express" width="100" height="99" loading="lazy" decoding="async" /></li>
+                <li class="now__badge--mastercard"><img src="assets/logos/investor-affiliations/mastercard.svg" alt="Mastercard" width="588" height="357" loading="lazy" decoding="async" /></li>
+                <li><img src="https://commons.wikimedia.org/wiki/Special:FilePath/MIT%20Logo%20and%20Wordmark.svg" alt="MIT" width="600" height="180" loading="lazy" decoding="async" /></li>
+                <li><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Harvard%20University%20logo.svg" alt="Harvard University" width="600" height="165" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
           </li>
           <li class="now__card">
-            <p class="now__status">In build</p>
-            <h3>High-performance agentic harness</h3>
-            <p>
+            <div class="now__card-head">
+              <div class="now__brand now__brand--ravl">
+                <img src="assets/logos/ravl.png" alt="RAVL" width="717" height="341" loading="lazy" decoding="async" />
+              </div>
+              <p class="now__status">AI Platform Engineer</p>
+              <h3>High-performance agentic harness</h3>
+            </div>
+            <p class="now__card-copy">
               Production control plane for multi-agent workloads: strict containment,
               policy gates, and observable tool use—designed for enterprise blast-radius limits.
             </p>
-            <p class="now__meta">LangGraph · agentgateway · Kubernetes · vLLM</p>
+            <div class="now__card-foot">
+              <p class="now__foot-label">Stack</p>
+              <ul class="now__badges now__badges--tools" aria-label="Tools used: LangGraph, Kubernetes, and AgentGateway">
+                <li>
+                  <img src="assets/logos/tech/langgraph.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                  <span>LangGraph</span>
+                </li>
+                <li>
+                  <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                  <span>Kubernetes</span>
+                </li>
+                <li>
+                  <img class="now__badge-mark--wide" src="assets/logos/tech/agentgateway.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                  <span>AgentGateway</span>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
@@ -1272,10 +1514,33 @@
           <div class="clients__inner">
             <div class="clients__header">
               <p id="clients-title" class="clients__label">Proof / platforms shipped</p>
-              <p class="clients__via">Hard metrics and architectural trade-offs across financial tech, payments, and national programs</p>
+              <p class="clients__via">Hard metrics and architectural trade-offs from a tech leader across payments, platforms, and national programs</p>
             </div>
-            <div class="carousel" role="region" aria-label="Selected client work">
-              <div class="carousel__track">
+            <div
+              class="carousel"
+              data-carousel
+              role="region"
+              aria-label="Selected client work"
+              tabindex="0"
+            >
+              <button
+                type="button"
+                class="carousel__btn carousel__btn--prev"
+                data-carousel-prev
+                aria-label="Show previous client work"
+              >
+                <svg class="carousel__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M15 6l-6 6 6 6"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="carousel__viewport">
+                <div class="carousel__track">
                 <div class="carousel__group">
                   <article class="client-card" aria-label="Scotiabank: Shipped enterprise Agentic Control Plane">
                     <div class="client-card__mark">
@@ -1296,14 +1561,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
-                      <li><img src="assets/logos/tech/gcp.svg" alt="Google Cloud" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/langgraph.svg" alt="LangGraph" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/gcp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Google Cloud</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/langgraph.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>LangGraph</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Terraform</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">
-                      <a href="#writeups">Architecture notes</a> · write-up forthcoming
-                    </p>
                   </article>
                   <article class="client-card" aria-label="CIBC: Migrated 160+ repositories to GitHub Actions">
                     <div class="client-card__mark">
@@ -1324,14 +1598,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
-                      <li><img src="assets/logos/tech/githubactions.svg" alt="GitHub Actions" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/github.svg" alt="GitHub" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/openshift.svg" alt="OpenShift" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/nodedotjs.svg" alt="Node.js" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/githubactions.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>GitHub Actions</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/github.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>GitHub</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>OpenShift</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Node.js</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">
-                      <a href="#writeups">Migration post-mortem</a> · write-up forthcoming
-                    </p>
                   </article>
                   <article class="client-card client-card--muted" aria-label="Haventree Bank: Tier 1 CDIC fintech platform on Azure">
                     <div class="client-card__mark">
@@ -1352,14 +1635,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
-                      <li><img src="assets/logos/tech/azure.svg" alt="Azure" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/docker.svg" alt="Docker" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/azure.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Azure</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Terraform</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/docker.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Docker</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">
-                      <a href="#writeups">Landing zone diagram</a> · write-up forthcoming
-                    </p>
                   </article>
                   <article class="client-card" aria-label="Interac: AWS Control Tower landing zone for e-Transfer">
                     <div class="client-card__mark">
@@ -1380,14 +1672,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
-                      <li><img src="assets/logos/tech/aws.svg" alt="AWS" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/hashicorp.svg" alt="HashiCorp" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/aws.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>AWS</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Terraform</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/hashicorp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>HashiCorp</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">
-                      <a href="#writeups">Control Tower notes</a> · write-up forthcoming
-                    </p>
                   </article>
                   <article class="client-card" aria-label="RBC: Automated 5,000+ IAM Jira requests on OpenShift">
                     <div class="client-card__mark">
@@ -1408,9 +1709,18 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
-                      <li><img src="assets/logos/tech/openshift.svg" alt="OpenShift" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/nodedotjs.svg" alt="Node.js" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/jira.svg" alt="Jira" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>OpenShift</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Node.js</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/jira.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Jira</span>
+                      </li>
                     </ul>
                   </article>
                   <article class="client-card" aria-label="Deloitte: Canada Post national track-and-trace platform">
@@ -1432,10 +1742,22 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
-                      <li><img src="assets/logos/tech/apachekafka.svg" alt="Apache Kafka" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/typescript.svg" alt="TypeScript" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/nodedotjs.svg" alt="Node.js" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/apachekafka.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kafka</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/typescript.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>TypeScript</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Node.js</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
                     </ul>
                   </article>
                 </div>
@@ -1459,12 +1781,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
-                      <li><img src="assets/logos/tech/gcp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/langgraph.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/gcp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Google Cloud</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/langgraph.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>LangGraph</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Terraform</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">Architecture notes · write-up forthcoming</p>
                   </article>
                   <article class="client-card" tabindex="-1">
                     <div class="client-card__mark">
@@ -1485,12 +1818,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
-                      <li><img src="assets/logos/tech/githubactions.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/github.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/githubactions.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>GitHub Actions</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/github.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>GitHub</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>OpenShift</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Node.js</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">Migration post-mortem · write-up forthcoming</p>
                   </article>
                   <article class="client-card client-card--muted" tabindex="-1">
                     <div class="client-card__mark">
@@ -1511,12 +1855,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
-                      <li><img src="assets/logos/tech/azure.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/docker.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/azure.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Azure</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Terraform</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/docker.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Docker</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">Landing zone diagram · write-up forthcoming</p>
                   </article>
                   <article class="client-card" tabindex="-1">
                     <div class="client-card__mark">
@@ -1537,12 +1892,23 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
-                      <li><img src="assets/logos/tech/aws.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/hashicorp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/aws.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>AWS</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/terraform.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Terraform</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/hashicorp.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>HashiCorp</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
                     </ul>
-                    <p class="client-card__writeup">Control Tower notes · write-up forthcoming</p>
                   </article>
                   <article class="client-card" tabindex="-1">
                     <div class="client-card__mark">
@@ -1563,9 +1929,18 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
-                      <li><img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/jira.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/openshift.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>OpenShift</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Node.js</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/jira.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Jira</span>
+                      </li>
                     </ul>
                   </article>
                   <article class="client-card" tabindex="-1">
@@ -1587,14 +1962,42 @@
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
-                      <li><img src="assets/logos/tech/apachekafka.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/typescript.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
-                      <li><img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" /></li>
+                      <li>
+                        <img src="assets/logos/tech/apachekafka.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kafka</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/typescript.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>TypeScript</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/nodedotjs.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Node.js</span>
+                      </li>
+                      <li>
+                        <img src="assets/logos/tech/kubernetes.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
+                        <span>Kubernetes</span>
+                      </li>
                     </ul>
                   </article>
                 </div>
               </div>
+              <button
+                type="button"
+                class="carousel__btn carousel__btn--next"
+                data-carousel-next
+                aria-label="Show next client work"
+              >
+                <svg class="carousel__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="m9 6 6 6-6 6"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </section>
@@ -1725,6 +2128,173 @@
       document.getElementById("year").textContent = String(
         new Date().getFullYear()
       );
+
+      (function initClientCarousel() {
+        const carousel = document.querySelector("[data-carousel]");
+        if (!carousel) return;
+
+        const track = carousel.querySelector(".carousel__track");
+        const viewport = carousel.querySelector(".carousel__viewport");
+        const prevBtn = carousel.querySelector("[data-carousel-prev]");
+        const nextBtn = carousel.querySelector("[data-carousel-next]");
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (!track || !viewport) return;
+
+        if (reducedMotion) {
+          carousel.classList.add("carousel--ready");
+          return;
+        }
+
+        let offset = 0;
+        let halfWidth = 0;
+        let paused = false;
+        let dragging = false;
+        let pointerActive = false;
+        let dragStartX = 0;
+        let dragStartOffset = 0;
+        let resumeTimer = 0;
+        let rafId = 0;
+        const speed = 0.42;
+        const dragThreshold = 6;
+
+        const measure = () => {
+          halfWidth = track.scrollWidth / 2;
+        };
+
+        const apply = () => {
+          track.style.transform = `translate3d(${offset}px, 0, 0)`;
+        };
+
+        const normalizeOffset = () => {
+          if (!halfWidth) return;
+          while (offset <= -halfWidth) offset += halfWidth;
+          while (offset > 0) offset -= halfWidth;
+        };
+
+        const pause = (autoResume) => {
+          paused = true;
+          carousel.classList.add("carousel--paused");
+          window.clearTimeout(resumeTimer);
+          if (autoResume && !reducedMotion) {
+            resumeTimer = window.setTimeout(() => {
+              paused = false;
+              carousel.classList.remove("carousel--paused");
+            }, 2600);
+          }
+        };
+
+        const nudge = (direction) => {
+          const card = track.querySelector(".client-card");
+          const gap = Number.parseFloat(getComputedStyle(track).gap) || 16;
+          const step = (card?.offsetWidth || 332) + gap;
+          offset += direction * step;
+          normalizeOffset();
+          apply();
+          pause(true);
+        };
+
+        const tick = () => {
+          if (!paused && !dragging && !reducedMotion && halfWidth) {
+            offset -= speed;
+            normalizeOffset();
+            apply();
+          }
+          rafId = window.requestAnimationFrame(tick);
+        };
+
+        const onPointerDown = (event) => {
+          if (event.pointerType === "mouse" && event.button !== 0) return;
+          pointerActive = true;
+          dragging = false;
+          dragStartX = event.clientX;
+          dragStartOffset = offset;
+        };
+
+        const onPointerMove = (event) => {
+          if (!pointerActive) return;
+          const delta = event.clientX - dragStartX;
+          if (!dragging && Math.abs(delta) < dragThreshold) return;
+          if (!dragging) {
+            dragging = true;
+            carousel.classList.add("carousel--dragging");
+            viewport.setPointerCapture(event.pointerId);
+            pause(false);
+            window.clearTimeout(resumeTimer);
+          }
+          offset = dragStartOffset + delta;
+          apply();
+        };
+
+        const endDrag = (event) => {
+          pointerActive = false;
+          if (!dragging) return;
+          dragging = false;
+          carousel.classList.remove("carousel--dragging");
+          normalizeOffset();
+          apply();
+          try {
+            viewport.releasePointerCapture(event.pointerId);
+          } catch {
+            /* no-op */
+          }
+          pause(true);
+        };
+
+        carousel.classList.add("carousel--ready");
+        measure();
+        apply();
+        tick();
+
+        prevBtn?.addEventListener("click", () => nudge(1));
+        nextBtn?.addEventListener("click", () => nudge(-1));
+
+        carousel.addEventListener("pointerenter", () => {
+          if (!dragging) {
+            paused = true;
+            carousel.classList.add("carousel--paused");
+          }
+        });
+
+        carousel.addEventListener("pointerleave", () => {
+          if (!dragging && !reducedMotion) {
+            paused = false;
+            carousel.classList.remove("carousel--paused");
+            window.clearTimeout(resumeTimer);
+          }
+        });
+
+        viewport.addEventListener("pointerdown", onPointerDown);
+        viewport.addEventListener("pointermove", onPointerMove);
+        viewport.addEventListener("pointerup", endDrag);
+        viewport.addEventListener("pointercancel", endDrag);
+
+        carousel.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            nudge(1);
+          }
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            nudge(-1);
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          measure();
+          normalizeOffset();
+          apply();
+        });
+
+        document.addEventListener("visibilitychange", () => {
+          paused = document.hidden || reducedMotion;
+          if (!document.hidden && !reducedMotion && !dragging) {
+            carousel.classList.remove("carousel--paused");
+          }
+        });
+      })();
     </script>
   </body>
 </html>
