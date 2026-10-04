@@ -69,7 +69,7 @@
         --charcoal-soft: #0e0722;
         --surface: rgba(18, 10, 42, 0.45);
         --surface-raised: rgba(30, 16, 64, 0.55);
-        --surface-card: rgba(14, 8, 34, 0.65);
+        --surface-card: rgba(14, 8, 34, 0.76);
         --leather: #c4b5fd;
         --leather-deep: #8b6cff;
         --leather-glow: rgba(139, 108, 255, 0.35);
@@ -149,7 +149,7 @@
         content: "";
         position: fixed;
         inset: 0;
-        z-index: 0;
+        z-index: 1;
         pointer-events: none;
         background-image:
           linear-gradient(to right, rgba(167, 139, 250, 0.035) 1px, transparent 1px),
@@ -215,8 +215,6 @@
         text-transform: uppercase;
         color: var(--leather);
         margin: 0 0 1rem;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
       }
 
       .section-tag__dot {
@@ -275,8 +273,7 @@
           0 16px 36px -8px rgba(0, 0, 0, 0.5);
         transition:
           border-color 0.3s var(--ease),
-          background 0.3s var(--ease),
-          box-shadow 0.3s var(--ease);
+          background 0.3s var(--ease);
       }
 
       .site-nav--scrolled .site-nav__shell {
@@ -401,11 +398,9 @@
       }
 
       .btn--ghost {
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(22, 13, 48, 0.62);
         border-color: rgba(214, 196, 255, 0.22);
         color: var(--cream);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
       }
 
       .btn--ghost:hover {
@@ -469,7 +464,6 @@
           rgba(88, 28, 135, 0.12) 45%,
           transparent 70%
         );
-        filter: blur(20px);
       }
 
       .hero__brand {
@@ -545,8 +539,6 @@
         font-size: 0.86rem;
         font-weight: 500;
         color: var(--cream-muted);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
         transition:
           color 0.2s var(--ease),
           background 0.2s var(--ease),
@@ -687,23 +679,17 @@
         border-radius: var(--radius-card);
         border: 1px solid var(--border-glass);
         background: var(--surface-card);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
         box-shadow:
           inset 0 1px 0 rgba(255, 255, 255, 0.12),
           0 16px 36px -8px rgba(0, 0, 0, 0.45);
         transition:
           transform 0.3s var(--ease),
-          border-color 0.3s var(--ease),
-          box-shadow 0.3s var(--ease);
+          border-color 0.3s var(--ease);
       }
 
       .rules__card:hover {
         border-color: var(--border-hover);
         transform: translateY(-2px);
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.2),
-          0 22px 48px -10px rgba(124, 58, 237, 0.25);
       }
 
       .rules__index {
@@ -787,16 +773,13 @@
         border-radius: var(--radius-card);
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
-          rgba(15, 9, 36, 0.65);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+          rgba(15, 9, 36, 0.78);
         box-shadow:
           inset 0 1px 0 rgba(255, 255, 255, 0.16),
           0 22px 52px -10px rgba(0, 0, 0, 0.55);
         transition:
           border-color 0.3s var(--ease),
-          transform 0.3s var(--ease),
-          box-shadow 0.3s var(--ease);
+          transform 0.3s var(--ease);
       }
 
       @media (min-width: 860px) {
@@ -810,9 +793,6 @@
       .now__card:hover {
         border-color: var(--border-hover);
         transform: translateY(-2px);
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.22),
-          0 28px 60px -12px rgba(124, 58, 237, 0.3);
       }
 
       .now__card-main {
@@ -916,8 +896,6 @@
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid var(--border-glass);
         color: var(--cream);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
         transition:
           background 0.2s var(--ease),
           border-color 0.2s var(--ease),
@@ -1038,8 +1016,6 @@
         background: rgba(14, 8, 34, 0.75);
         color: var(--cream);
         cursor: pointer;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
         transition:
           border-color 0.2s var(--ease),
@@ -1101,26 +1077,19 @@
         border-radius: var(--radius-card);
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
-          rgba(15, 9, 36, 0.65);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
+          rgba(15, 9, 36, 0.78);
         box-shadow:
           inset 0 1px 0 rgba(255, 255, 255, 0.14),
           0 16px 40px -10px rgba(0, 0, 0, 0.45);
-        overflow: hidden;
         transition:
           border-color 0.3s var(--ease),
-          transform 0.3s var(--ease),
-          box-shadow 0.3s var(--ease);
+          transform 0.3s var(--ease);
       }
 
       .client-card:hover,
       .client-card:focus-within {
         border-color: var(--border-hover);
         transform: translateY(-3px);
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.22),
-          0 24px 52px -10px rgba(124, 58, 237, 0.3);
       }
 
       .client-card__mark {
@@ -1197,8 +1166,6 @@
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid var(--border-glass);
         color: var(--cream);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
         transition:
           background 0.2s var(--ease),
           border-color 0.2s var(--ease);
@@ -1293,23 +1260,17 @@
         border-radius: var(--radius-card);
         border: 1px solid var(--border-glass);
         background: var(--surface-card);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
         box-shadow:
           inset 0 1px 0 rgba(255, 255, 255, 0.12),
           0 16px 36px -8px rgba(0, 0, 0, 0.45);
         transition:
           transform 0.3s var(--ease),
-          border-color 0.3s var(--ease),
-          box-shadow 0.3s var(--ease);
+          border-color 0.3s var(--ease);
       }
 
       .focus__card:hover {
         border-color: var(--border-hover);
         transform: translateY(-2px);
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.2),
-          0 24px 50px -10px rgba(124, 58, 237, 0.25);
       }
 
       .focus__card-header {
@@ -1355,8 +1316,6 @@
         line-height: 1.3;
         color: var(--cream-muted);
         white-space: nowrap;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
         transition:
           border-color 0.2s var(--ease),
           color 0.2s var(--ease),
@@ -1393,9 +1352,7 @@
         background:
           radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.22) 0%, transparent 75%),
           linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01)),
-          rgba(14, 8, 34, 0.65);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+          rgba(14, 8, 34, 0.76);
         box-shadow:
           inset 0 1px 0 rgba(255, 255, 255, 0.18),
           0 24px 60px -12px rgba(0, 0, 0, 0.6);
@@ -1436,6 +1393,62 @@
         font-size: 0.85rem;
         color: var(--cream-faint);
         border-top: 1px solid var(--border-subtle);
+      }
+
+      /* —— Hover glow (opacity-only = compositor-friendly) —— */
+      .rules__card,
+      .focus__card,
+      .now__card,
+      .client-card {
+        position: relative;
+      }
+
+      .rules__card::after,
+      .focus__card::after,
+      .now__card::after,
+      .client-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        box-shadow: 0 24px 52px -12px rgba(124, 58, 237, 0.38);
+        opacity: 0;
+        transition: opacity 0.3s var(--ease);
+      }
+
+      .rules__card:hover::after,
+      .focus__card:hover::after,
+      .now__card:hover::after,
+      .client-card:hover::after,
+      .client-card:focus-within::after {
+        opacity: 1;
+      }
+
+      .client-card__mark {
+        border-radius: calc(var(--radius-card) - 1px) calc(var(--radius-card) - 1px) 0 0;
+      }
+
+      .client-card__tech {
+        border-radius: 0 0 calc(var(--radius-card) - 1px) calc(var(--radius-card) - 1px);
+      }
+
+      #galaxy {
+        background: var(--charcoal);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .section-tag__dot--pulse,
+        .site-nav__status-dot {
+          animation: none;
+        }
+
+        .rules__card::after,
+        .focus__card::after,
+        .now__card::after,
+        .client-card::after {
+          transition: none;
+        }
       }
 
       /* —— Keyframe Animations —— */
@@ -2524,66 +2537,94 @@
 
         if (!track || !viewport) return;
 
-        if (reducedMotion) {
-          carousel.classList.add("carousel--ready");
-          return;
-        }
+        carousel.classList.add("carousel--ready");
+        if (reducedMotion) return;
+
+        const SPEED = 0.026; // px per ms (~26px/s) — frame-rate independent
+        const HOLD_MS = 2600; // pause auto-drift after user interaction
+        const DRAG_THRESHOLD = 6;
 
         let offset = 0;
+        let target = null; // eased destination for button / keyboard nudges
         let halfWidth = 0;
-        let paused = false;
+        let hovered = false;
+        let holdUntil = 0;
         let dragging = false;
         let pointerActive = false;
         let dragStartX = 0;
         let dragStartOffset = 0;
-        let resumeTimer = 0;
         let rafId = 0;
-        const speed = 0.42;
-        const dragThreshold = 6;
+        let last = 0;
+        let running = false;
+        let inView = false;
 
         const measure = () => {
           halfWidth = track.scrollWidth / 2;
         };
 
         const apply = () => {
-          track.style.transform = "translate3d(" + offset + "px, 0, 0)";
+          track.style.transform = "translate3d(" + offset.toFixed(2) + "px, 0, 0)";
         };
 
-        const normalizeOffset = () => {
-          if (!halfWidth) return;
-          while (offset <= -halfWidth) offset += halfWidth;
-          while (offset > 0) offset -= halfWidth;
-        };
-
-        const pause = (autoResume) => {
-          paused = true;
-          carousel.classList.add("carousel--paused");
-          window.clearTimeout(resumeTimer);
-          if (autoResume && !reducedMotion) {
-            resumeTimer = window.setTimeout(() => {
-              paused = false;
-              carousel.classList.remove("carousel--paused");
-            }, 2600);
+        // Keep offset inside one loop width; shift dependent values by the same amount.
+        const wrap = () => {
+          if (!halfWidth) return 0;
+          let shift = 0;
+          while (offset <= -halfWidth) {
+            offset += halfWidth;
+            shift += halfWidth;
           }
+          while (offset > 0) {
+            offset -= halfWidth;
+            shift -= halfWidth;
+          }
+          if (target !== null) target += shift;
+          return shift;
         };
+
+        const loop = (now) => {
+          if (!running) return;
+          const dt = last ? Math.min(now - last, 64) : 16;
+          last = now;
+
+          if (target !== null) {
+            offset += (target - offset) * (1 - Math.exp(-dt / 110));
+            if (Math.abs(target - offset) < 0.5) {
+              offset = target;
+              target = null;
+            }
+            wrap();
+            apply();
+          } else if (!hovered && !dragging && now > holdUntil && halfWidth) {
+            offset -= SPEED * dt;
+            wrap();
+            apply();
+          }
+          rafId = window.requestAnimationFrame(loop);
+        };
+
+        const start = () => {
+          if (running) return;
+          running = true;
+          last = 0;
+          rafId = window.requestAnimationFrame(loop);
+        };
+
+        const stop = () => {
+          running = false;
+          window.cancelAnimationFrame(rafId);
+        };
+
+        // Only animate while the carousel is on screen and the tab is visible.
+        const sync = () => (inView && !document.hidden ? start() : stop());
 
         const nudge = (direction) => {
           const card = track.querySelector(".client-card");
-          const gap = Number.parseFloat(getComputedStyle(track).gap) || 20;
-          const step = (card?.offsetWidth || 360) + gap;
-          offset += direction * step;
-          normalizeOffset();
-          apply();
-          pause(true);
-        };
-
-        const tick = () => {
-          if (!paused && !dragging && !reducedMotion && halfWidth) {
-            offset -= speed;
-            normalizeOffset();
-            apply();
-          }
-          rafId = window.requestAnimationFrame(tick);
+          const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 20;
+          const step = (card ? card.offsetWidth : 360) + gap;
+          target = (target ?? offset) + direction * step;
+          holdUntil = performance.now() + HOLD_MS;
+          start();
         };
 
         const onPointerDown = (event) => {
@@ -2597,15 +2638,15 @@
         const onPointerMove = (event) => {
           if (!pointerActive) return;
           const delta = event.clientX - dragStartX;
-          if (!dragging && Math.abs(delta) < dragThreshold) return;
           if (!dragging) {
+            if (Math.abs(delta) < DRAG_THRESHOLD) return;
             dragging = true;
+            target = null;
             carousel.classList.add("carousel--dragging");
             viewport.setPointerCapture(event.pointerId);
-            pause(false);
-            window.clearTimeout(resumeTimer);
           }
           offset = dragStartOffset + delta;
+          dragStartOffset += wrap();
           apply();
         };
 
@@ -2614,37 +2655,25 @@
           if (!dragging) return;
           dragging = false;
           carousel.classList.remove("carousel--dragging");
-          normalizeOffset();
-          apply();
           try {
             viewport.releasePointerCapture(event.pointerId);
           } catch {
             /* no-op */
           }
-          pause(true);
+          holdUntil = performance.now() + HOLD_MS;
         };
 
-        carousel.classList.add("carousel--ready");
         measure();
         apply();
-        tick();
 
         prevBtn?.addEventListener("click", () => nudge(1));
         nextBtn?.addEventListener("click", () => nudge(-1));
 
-        carousel.addEventListener("pointerenter", () => {
-          if (!dragging) {
-            paused = true;
-            carousel.classList.add("carousel--paused");
-          }
+        carousel.addEventListener("pointerenter", (event) => {
+          if (event.pointerType === "mouse") hovered = true;
         });
-
         carousel.addEventListener("pointerleave", () => {
-          if (!dragging && !reducedMotion) {
-            paused = false;
-            carousel.classList.remove("carousel--paused");
-            window.clearTimeout(resumeTimer);
-          }
+          hovered = false;
         });
 
         viewport.addEventListener("pointerdown", onPointerDown);
@@ -2663,134 +2692,407 @@
           }
         });
 
+        let resizeQueued = false;
         window.addEventListener("resize", () => {
-          measure();
-          normalizeOffset();
-          apply();
+          if (resizeQueued) return;
+          resizeQueued = true;
+          window.requestAnimationFrame(() => {
+            resizeQueued = false;
+            measure();
+            wrap();
+            apply();
+          });
         });
 
-        document.addEventListener("visibilitychange", () => {
-          paused = document.hidden || reducedMotion;
-          if (!document.hidden && !reducedMotion && !dragging) {
-            carousel.classList.remove("carousel--paused");
-          }
-        });
+        new IntersectionObserver(
+          ([entry]) => {
+            inView = entry.isIntersecting;
+            sync();
+          },
+          { rootMargin: "120px 0px" }
+        ).observe(carousel);
+        document.addEventListener("visibilitychange", sync);
       })();
 
-      (function initGalaxy() {
-        const field = document.getElementById("galaxy");
-        const hero = document.querySelector(".hero__field");
-        if (!field || !hero) return;
+      /*
+       * Cosmos: one fixed starfield (nebula + 3 parallax star depths + rare meteors)
+       * and a hero "orbital control plane" (planet, tilted orbits, satellites with trails).
+       * Perf: pre-rendered sprites (no per-frame gradients), low-res nebula blit,
+       * DPR capped at 1.5, 60fps cap, paused when tab hidden / hero offscreen,
+       * single static frame for prefers-reduced-motion.
+       */
+      (function initCosmos() {
+        const sky = document.getElementById("galaxy");
+        const hero = document.querySelector(".hero");
+        const orbitCanvas = document.querySelector(".hero__field");
+        if (!sky || !hero || !orbitCanvas) return;
 
-        const fieldCtx = field.getContext("2d");
-        const heroCtx = hero.getContext("2d");
-        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const nebulae = [
-          { x: 0.78, y: 0.22, r: 0.46, hue: "rgba(124, 58, 237, 0.45)" },
-          { x: 0.18, y: 0.72, r: 0.4, hue: "rgba(192, 38, 211, 0.25)" },
-          { x: 0.52, y: 0.48, r: 0.55, hue: "rgba(67, 26, 160, 0.45)" },
-          { x: 0.88, y: 0.78, r: 0.26, hue: "rgba(56, 189, 248, 0.12)" },
-        ];
+        const skyCtx = sky.getContext("2d", { alpha: false });
+        const orbitCtx = orbitCanvas.getContext("2d");
+        const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const TAU = Math.PI * 2;
+        const FRAME_MS = 1000 / 60;
+        const DPR = Math.min(window.devicePixelRatio || 1, 1.5);
+
+        let reduced = motionQuery.matches;
+        let W = 0;
+        let H = 0;
+        let HW = 0;
+        let HH = 0;
+        let scrollY = window.scrollY;
+        let heroVisible = true;
+        let rafId = 0;
+        let lastFrame = 0;
         let stars = [];
-        let width = 0;
-        let height = 0;
-        let heroWidth = 0;
-        let heroHeight = 0;
-        let frame = 0;
+        let meteors = [];
+        let nextMeteorAt = performance.now() + 2500;
+        let nebula = null;
+
+        const makeCanvas = (w, h) => {
+          const c = document.createElement("canvas");
+          c.width = w;
+          c.height = h;
+          return c;
+        };
+
+        const makeGlow = (size, stops) => {
+          const c = makeCanvas(size, size);
+          const g = c.getContext("2d");
+          const half = size / 2;
+          const grad = g.createRadialGradient(half, half, 0, half, half, half);
+          stops.forEach(([at, color]) => grad.addColorStop(at, color));
+          g.fillStyle = grad;
+          g.fillRect(0, 0, size, size);
+          return c;
+        };
+
+        const starGlow = (rgb) =>
+          makeGlow(32, [
+            [0, "rgba(255, 255, 255, 1)"],
+            [0.16, "rgba(" + rgb + ", 0.9)"],
+            [0.42, "rgba(" + rgb + ", 0.22)"],
+            [1, "rgba(" + rgb + ", 0)"],
+          ]);
+
+        // Weighted palette: mostly white, some lavender, a few cool blue.
+        const STAR_SPRITES = [
+          { sprite: starGlow("244, 240, 255"), weight: 0.7 },
+          { sprite: starGlow("196, 181, 253"), weight: 0.18 },
+          { sprite: starGlow("186, 230, 253"), weight: 0.12 },
+        ];
+
+        const pickSprite = () => {
+          let roll = Math.random();
+          for (const entry of STAR_SPRITES) {
+            if ((roll -= entry.weight) <= 0) return entry.sprite;
+          }
+          return STAR_SPRITES[0].sprite;
+        };
+
+        // Far → near. Nearer stars are larger, brighter and drift more on scroll.
+        const LAYERS = [
+          { share: 0.62, rMin: 0.35, rMax: 0.8, parallax: 0.02, alpha: 0.55 },
+          { share: 0.3, rMin: 0.6, rMax: 1.15, parallax: 0.05, alpha: 0.75 },
+          { share: 0.08, rMin: 1.0, rMax: 1.7, parallax: 0.1, alpha: 0.95 },
+        ];
+
+        const buildStars = () => {
+          const count = Math.max(90, Math.min(420, Math.round((W * H) / 7000)));
+          stars = [];
+          LAYERS.forEach((layer, index) => {
+            const n = Math.round(count * layer.share);
+            for (let i = 0; i < n; i++) {
+              stars.push({
+                x: Math.random(),
+                y: Math.random(),
+                r: layer.rMin + Math.random() * (layer.rMax - layer.rMin),
+                layer: index,
+                alpha: layer.alpha * (0.6 + Math.random() * 0.4),
+                twinkle: Math.random() < 0.35 ? 0.55 : 0.15,
+                speed: 0.0006 + Math.random() * 0.0016,
+                phase: Math.random() * TAU,
+                sprite: pickSprite(),
+              });
+            }
+          });
+        };
+
+        // Nebula rendered once at 1/4 resolution with padding for drift, then blitted.
+        const buildNebula = () => {
+          const pad = 0.12;
+          const scale = 0.25;
+          const w = Math.max(1, Math.ceil(W * (1 + pad * 2) * scale));
+          const h = Math.max(1, Math.ceil(H * (1 + pad * 2) * scale));
+          const c = makeCanvas(w, h);
+          const g = c.getContext("2d");
+          g.fillStyle = "#070514";
+          g.fillRect(0, 0, w, h);
+          g.globalCompositeOperation = "lighter";
+          [
+            [0.78, 0.2, 0.5, "rgba(124, 58, 237, 0.4)"],
+            [0.15, 0.75, 0.42, "rgba(192, 38, 211, 0.18)"],
+            [0.5, 0.5, 0.6, "rgba(67, 26, 160, 0.36)"],
+            [0.9, 0.85, 0.3, "rgba(56, 189, 248, 0.09)"],
+            [0.3, 0.12, 0.28, "rgba(99, 102, 241, 0.12)"],
+          ].forEach(([x, y, r, color]) => {
+            const cx = x * w;
+            const cy = y * h;
+            const radius = r * Math.max(w, h);
+            const grad = g.createRadialGradient(cx, cy, 0, cx, cy, radius);
+            grad.addColorStop(0, color);
+            grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+            g.fillStyle = grad;
+            g.fillRect(0, 0, w, h);
+          });
+          nebula = { canvas: c, pad };
+        };
+
+        const spawnMeteor = (now) => {
+          const fromLeft = Math.random() < 0.5;
+          const angle = (fromLeft ? 0.38 : Math.PI - 0.38) + (Math.random() - 0.5) * 0.25;
+          meteors.push({
+            x: (fromLeft ? 0.05 + Math.random() * 0.5 : 0.45 + Math.random() * 0.5) * W,
+            y: Math.random() * H * 0.45,
+            vx: Math.cos(angle),
+            vy: Math.sin(angle),
+            speed: 0.9 + Math.random() * 0.6,
+            len: 110 + Math.random() * 140,
+            born: now,
+            life: 850 + Math.random() * 550,
+          });
+          nextMeteorAt = now + 6000 + Math.random() * 9000;
+        };
+
+        const drawMeteors = (now) => {
+          if (now >= nextMeteorAt && meteors.length < 2) spawnMeteor(now);
+          meteors = meteors.filter((m) => now - m.born < m.life);
+          skyCtx.lineWidth = 1.4;
+          skyCtx.lineCap = "round";
+          for (const m of meteors) {
+            const age = now - m.born;
+            const fade = Math.sin((age / m.life) * Math.PI);
+            const headX = m.x + m.vx * m.speed * age;
+            const headY = m.y + m.vy * m.speed * age;
+            const tailX = headX - m.vx * m.len;
+            const tailY = headY - m.vy * m.len;
+            const grad = skyCtx.createLinearGradient(headX, headY, tailX, tailY);
+            grad.addColorStop(0, "rgba(255, 255, 255, " + 0.9 * fade + ")");
+            grad.addColorStop(0.3, "rgba(196, 181, 253, " + 0.35 * fade + ")");
+            grad.addColorStop(1, "rgba(196, 181, 253, 0)");
+            skyCtx.strokeStyle = grad;
+            skyCtx.beginPath();
+            skyCtx.moveTo(headX, headY);
+            skyCtx.lineTo(tailX, tailY);
+            skyCtx.stroke();
+          }
+        };
+
+        const drawSky = (now) => {
+          const t = reduced ? 0 : now;
+          const sy = reduced ? 0 : scrollY;
+          const padX = W * nebula.pad;
+          const padY = H * nebula.pad;
+          const dx = Math.sin(t * 0.00003) * padX * 0.6;
+          const dy = Math.cos(t * 0.000024) * padY * 0.5 - Math.min(sy * 0.015, padY * 0.4);
+          skyCtx.drawImage(nebula.canvas, -padX + dx, -padY + dy, W + padX * 2, H + padY * 2);
+
+          for (const s of stars) {
+            let y = s.y * H - sy * LAYERS[s.layer].parallax;
+            y = ((y % H) + H) % H;
+            const twinkle = reduced
+              ? 1
+              : 1 - s.twinkle * (0.5 + 0.5 * Math.sin(t * s.speed + s.phase));
+            const size = s.r * 6;
+            skyCtx.globalAlpha = s.alpha * twinkle;
+            skyCtx.drawImage(s.sprite, s.x * W - size / 2, y - size / 2, size, size);
+          }
+          skyCtx.globalAlpha = 1;
+
+          if (!reduced) drawMeteors(now);
+        };
+
+        // —— Hero orbital system ——
+        const satGlow = (rgb) =>
+          makeGlow(24, [
+            [0, "rgba(255, 255, 255, 1)"],
+            [0.22, "rgba(" + rgb + ", 0.95)"],
+            [1, "rgba(" + rgb + ", 0)"],
+          ]);
+
+        const ORBITS = [
+          { rx: 0.2, ry: 0.07, tilt: -0.38, speed: 0.00011, rgb: "196, 181, 253", alpha: 0.32, sats: [0, 0.5] },
+          { rx: 0.29, ry: 0.11, tilt: -0.22, speed: -0.00007, rgb: "232, 121, 249", alpha: 0.22, sats: [0.2] },
+          { rx: 0.38, ry: 0.15, tilt: -0.3, speed: 0.000045, rgb: "125, 211, 252", alpha: 0.14, sats: [0.65] },
+        ];
+        ORBITS.forEach((orbit) => {
+          orbit.sprite = satGlow(orbit.rgb);
+        });
+
+        const coreSprite = makeGlow(256, [
+          [0, "rgba(167, 139, 250, 0.34)"],
+          [0.4, "rgba(124, 58, 237, 0.12)"],
+          [1, "rgba(124, 58, 237, 0)"],
+        ]);
+
+        const planetSprite = (() => {
+          const size = 128;
+          const r = size / 2;
+          const c = makeCanvas(size, size);
+          const g = c.getContext("2d");
+          const grad = g.createRadialGradient(r * 0.68, r * 0.62, r * 0.08, r, r, r);
+          grad.addColorStop(0, "#efeaff");
+          grad.addColorStop(0.32, "#a78bfa");
+          grad.addColorStop(0.72, "#4c1d95");
+          grad.addColorStop(1, "#1a0940");
+          g.fillStyle = grad;
+          g.beginPath();
+          g.arc(r, r, r - 1, 0, TAU);
+          g.fill();
+          return c;
+        })();
+
+        const TRAIL = 9;
+
+        const drawOrbits = (now) => {
+          const t = reduced ? 9000 : now;
+          orbitCtx.clearRect(0, 0, HW, HH);
+          if (!HW || !HH) return;
+
+          const mobile = HW < 720;
+          const cx = HW * (mobile ? 0.84 : 0.74);
+          const cy = HH * (mobile ? 0.2 : 0.44);
+          const unit = mobile ? HW * 0.95 : Math.min(HW, HH * 1.5);
+          const base = mobile ? 0.5 : 1;
+          const precession = Math.sin(t * 0.00004) * 0.06;
+
+          orbitCtx.globalAlpha = base;
+          const core = unit * 0.42;
+          orbitCtx.drawImage(coreSprite, cx - core / 2, cy - core / 2, core, core);
+
+          for (const orbit of ORBITS) {
+            const rx = orbit.rx * unit;
+            const ry = orbit.ry * unit;
+            orbitCtx.save();
+            orbitCtx.translate(cx, cy);
+            orbitCtx.rotate(orbit.tilt + precession);
+
+            orbitCtx.globalAlpha = base;
+            orbitCtx.strokeStyle = "rgba(" + orbit.rgb + ", " + orbit.alpha + ")";
+            orbitCtx.lineWidth = 1;
+            orbitCtx.beginPath();
+            orbitCtx.ellipse(0, 0, rx, ry, 0, 0, TAU);
+            orbitCtx.stroke();
+
+            const dir = Math.sign(orbit.speed);
+            for (const start of orbit.sats) {
+              const angle = start * TAU + t * orbit.speed;
+              // Front of the orbit (lower half) reads brighter/larger for depth.
+              const depth = 0.65 + 0.35 * Math.sin(angle);
+              for (let i = TRAIL - 1; i >= 0; i--) {
+                const a = angle - dir * i * 0.035;
+                const px = Math.cos(a) * rx;
+                const py = Math.sin(a) * ry;
+                const size = (i === 0 ? 14 : 8 - i * 0.6) * depth;
+                orbitCtx.globalAlpha = base * depth * (1 - i / TRAIL) * (i === 0 ? 1 : 0.6);
+                orbitCtx.drawImage(orbit.sprite, px - size / 2, py - size / 2, size, size);
+              }
+            }
+            orbitCtx.restore();
+          }
+
+          orbitCtx.globalAlpha = base;
+          const planet = unit * 0.07;
+          orbitCtx.drawImage(planetSprite, cx - planet / 2, cy - planet / 2, planet, planet);
+          orbitCtx.globalAlpha = 1;
+        };
+
+        // —— Loop & lifecycle ——
+        const frame = (now) => {
+          rafId = window.requestAnimationFrame(frame);
+          if (now - lastFrame < FRAME_MS - 1) return; // cap at 60fps on 120Hz+ displays
+          lastFrame = now;
+          drawSky(now);
+          if (heroVisible) drawOrbits(now);
+        };
+
+        const start = () => {
+          if (reduced || rafId || document.hidden) return;
+          lastFrame = 0;
+          rafId = window.requestAnimationFrame(frame);
+        };
+
+        const stop = () => {
+          window.cancelAnimationFrame(rafId);
+          rafId = 0;
+        };
+
+        const renderStatic = () => {
+          drawSky(0);
+          drawOrbits(0);
+        };
 
         const resize = () => {
-          const ratio = Math.min(window.devicePixelRatio || 1, 2);
-          width = window.innerWidth;
-          height = window.innerHeight;
-          field.width = Math.floor(width * ratio);
-          field.height = Math.floor(height * ratio);
-          fieldCtx.setTransform(ratio, 0, 0, ratio, 0, 0);
+          const widthChanged = window.innerWidth !== W;
+          W = window.innerWidth;
+          H = window.innerHeight;
+          sky.width = Math.round(W * DPR);
+          sky.height = Math.round(H * DPR);
+          skyCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
+          skyCtx.imageSmoothingQuality = "high";
 
-          const heroBox = hero.getBoundingClientRect();
-          heroWidth = heroBox.width;
-          heroHeight = heroBox.height;
-          hero.width = Math.floor(heroWidth * ratio);
-          hero.height = Math.floor(heroHeight * ratio);
-          heroCtx.setTransform(ratio, 0, 0, ratio, 0, 0);
+          const box = hero.getBoundingClientRect();
+          HW = box.width;
+          HH = box.height;
+          orbitCanvas.width = Math.round(HW * DPR);
+          orbitCanvas.height = Math.round(HH * DPR);
+          orbitCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
 
-          const count = Math.round((width * height) / 8500);
-          stars = Array.from({ length: count }, () => ({
-            x: Math.random(),
-            y: Math.random(),
-            r: Math.random() * 1.25 + 0.2,
-            phase: Math.random() * Math.PI * 2,
-            speed: Math.random() * 0.7 + 0.2,
-          }));
+          // Mobile URL-bar height changes keep the same starfield (no reshuffle).
+          if (widthChanged || !stars.length) buildStars();
+          buildNebula();
+          if (reduced || !rafId) renderStatic();
         };
 
-        const paintNebula = (ctx, boxWidth, boxHeight, time) => {
-          nebulae.forEach((cloud, index) => {
-            const drift = reduced ? 0 : Math.sin(time + index) * 0.025;
-            const cx = (cloud.x + drift) * boxWidth;
-            const cy = (cloud.y + Math.cos(time * 0.8 + index) * 0.02) * boxHeight;
-            const radius = cloud.r * Math.max(boxWidth, boxHeight);
-            const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-            glow.addColorStop(0, cloud.hue);
-            glow.addColorStop(1, "rgba(7, 5, 20, 0)");
-            ctx.fillStyle = glow;
-            ctx.fillRect(0, 0, boxWidth, boxHeight);
+        let resizeQueued = false;
+        window.addEventListener("resize", () => {
+          if (resizeQueued) return;
+          resizeQueued = true;
+          window.requestAnimationFrame(() => {
+            resizeQueued = false;
+            resize();
           });
-        };
+        });
 
-        const paint = (time) => {
-          const t = reduced ? 0 : time * 0.00005;
-          fieldCtx.clearRect(0, 0, width, height);
-          fieldCtx.fillStyle = "#070514";
-          fieldCtx.fillRect(0, 0, width, height);
-          paintNebula(fieldCtx, width, height, t);
+        window.addEventListener(
+          "scroll",
+          () => {
+            scrollY = window.scrollY;
+          },
+          { passive: true }
+        );
 
-          stars.forEach((star) => {
-            const alpha = reduced
-              ? 0.7
-              : 0.35 + Math.sin(time * 0.001 * star.speed + star.phase) * 0.35;
-            fieldCtx.beginPath();
-            fieldCtx.fillStyle = "rgba(244, 240, 255, " + Math.max(0.15, alpha) + ")";
-            fieldCtx.arc(star.x * width, star.y * height, star.r, 0, Math.PI * 2);
-            fieldCtx.fill();
-          });
+        new IntersectionObserver(([entry]) => {
+          heroVisible = entry.isIntersecting;
+        }).observe(hero);
 
-          heroCtx.clearRect(0, 0, heroWidth, heroHeight);
-          const orbit = reduced ? 0.4 : time * 0.00015;
-          heroCtx.save();
-          heroCtx.translate(heroWidth * 0.72, heroHeight * 0.42);
-          heroCtx.rotate(orbit);
-          heroCtx.strokeStyle = "rgba(196, 181, 253, 0.28)";
-          heroCtx.lineWidth = 1;
-          heroCtx.beginPath();
-          heroCtx.ellipse(0, 0, heroWidth * 0.22, heroHeight * 0.16, 0, 0, Math.PI * 2);
-          heroCtx.stroke();
-          heroCtx.beginPath();
-          heroCtx.strokeStyle = "rgba(232, 121, 249, 0.22)";
-          heroCtx.ellipse(0, 0, heroWidth * 0.3, heroHeight * 0.1, 0.6, 0, Math.PI * 2);
-          heroCtx.stroke();
-          const dust = heroCtx.createRadialGradient(0, 0, 0, 0, 0, heroWidth * 0.28);
-          dust.addColorStop(0, "rgba(167, 139, 250, 0.25)");
-          dust.addColorStop(1, "rgba(167, 139, 250, 0)");
-          heroCtx.fillStyle = dust;
-          heroCtx.beginPath();
-          heroCtx.arc(0, 0, heroWidth * 0.28, 0, Math.PI * 2);
-          heroCtx.fill();
-          heroCtx.restore();
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) stop();
+          else start();
+        });
 
-          if (!reduced && !document.hidden) frame = requestAnimationFrame(paint);
-        };
+        motionQuery.addEventListener("change", (event) => {
+          reduced = event.matches;
+          if (reduced) {
+            stop();
+            meteors = [];
+            renderStatic();
+          } else {
+            start();
+          }
+        });
 
         resize();
-        window.addEventListener("resize", resize);
-        if (reduced) paint(0);
-        else frame = requestAnimationFrame(paint);
-        document.addEventListener("visibilitychange", () => {
-          if (document.hidden) {
-            cancelAnimationFrame(frame);
-            return;
-          }
-          if (!reduced) frame = requestAnimationFrame(paint);
-        });
+        start();
       })();
     </script>
   </body>
