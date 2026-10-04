@@ -712,10 +712,13 @@
         justify-content: center;
         width: 2.1rem;
         height: 2.1rem;
+        flex-shrink: 0;
         border-radius: var(--radius-pill);
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         font-weight: 700;
-        letter-spacing: 0.05em;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        text-align: center;
         color: var(--leather);
         background: rgba(196, 181, 253, 0.1);
         border: 1px solid rgba(196, 181, 253, 0.25);
@@ -731,8 +734,8 @@
         color: var(--cream);
       }
 
-      .rules__card span {
-        display: block;
+      .rules__card p {
+        margin: 0;
         font-size: 0.92rem;
         line-height: 1.6;
         color: var(--cream-muted);
@@ -1697,35 +1700,35 @@
               <span class="rules__index" aria-hidden="true">01</span>
               <div>
                 <strong>Automate the pattern, not the ticket</strong>
-                <span>Recurring ops work is a systems failure. Resolve classes of problems with workflows and control planes—never grow a queue.</span>
+                <p>Recurring ops work is a systems failure. Resolve classes of problems with workflows and control planes—never grow a queue.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">02</span>
               <div>
                 <strong>Security lives in IaC</strong>
-                <span>PCI-DSS, SOC 2, and NIST are encoded in Terraform and pipelines. If it isn’t in the graph, it doesn’t ship.</span>
+                <p>PCI-DSS, SOC 2, and NIST are encoded in Terraform and pipelines. If it isn’t in the graph, it doesn’t ship.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">03</span>
               <div>
                 <strong>Zero tolerance for manual operational debt</strong>
-                <span>Runbooks that require heroics are unfinished design. Self-service account vending, deterministic deploy paths, no snowflake clusters.</span>
+                <p>Runbooks that require heroics are unfinished design. Self-service account vending, deterministic deploy paths, no snowflake clusters.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">04</span>
               <div>
                 <strong>Deterministic boundaries for agentic systems</strong>
-                <span>Containment, policy, and observability are first-class architecture—not a bolt-on after the demo works.</span>
+                <p>Containment, policy, and observability are first-class architecture—not a bolt-on after the demo works.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">05</span>
               <div>
                 <strong>Own the architecture end-to-end</strong>
-                <span>Trade-offs are explicit and owned. Hosted vs open-source, managed vs DIY—chosen for deploy velocity and blast-radius control.</span>
+                <p>Trade-offs are explicit and owned. Hosted vs open-source, managed vs DIY—chosen for deploy velocity and blast-radius control.</p>
               </div>
             </li>
           </ol>
