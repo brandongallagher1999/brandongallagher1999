@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>document.documentElement.classList.add("js");</script>
     <title>Brandon Gallagher — AI Platform Engineer</title>
     <meta
       name="description"
@@ -1662,6 +1663,215 @@
         }
       }
 
+      /* —— Motion: scroll reveal —— */
+      .js main :is(.section-tag, h2, .rules__lede, .now__lede, .clients__via, .focus__copy, .rules__card, .focus__card, .now__card, .carousel, .contact__box, .stats__item):not(.reveal-done) {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+        transition:
+          opacity 0.9s var(--ease),
+          transform 0.9s var(--ease);
+        transition-delay: calc(var(--i, 0) * 80ms);
+      }
+
+      .js main :is(.section-tag, h2, .rules__lede, .now__lede, .clients__via, .focus__copy, .rules__card, .focus__card, .now__card, .carousel, .contact__box, .stats__item).is-revealed:not(.reveal-done) {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* —— Nav: progress, active indicator, mobile sheet —— */
+      .site-nav__shell {
+        position: relative;
+      }
+
+      .site-nav__progress {
+        position: absolute;
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: -1px;
+        height: 1px;
+        border-radius: 1px;
+        background: linear-gradient(90deg, rgba(139, 92, 246, 0), #a78bfa 30%, #e9d5ff);
+        transform: scaleX(0);
+        transform-origin: left center;
+        pointer-events: none;
+      }
+
+      /* Scroll-driven (zero JS); hidden where unsupported */
+      @supports (animation-timeline: scroll()) {
+        .site-nav__progress {
+          animation: nav-progress linear both;
+          animation-timeline: scroll(root);
+        }
+      }
+
+      @keyframes nav-progress {
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      .site-nav__links {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .site-nav__indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: var(--w, 0px);
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: inset 0 0 0 1px rgba(214, 196, 255, 0.14);
+        transform: translateX(var(--x, 0px));
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          transform 0.5s var(--ease),
+          width 0.5s var(--ease),
+          opacity 0.3s var(--ease);
+      }
+
+      .site-nav__links.has-active .site-nav__indicator {
+        opacity: 1;
+      }
+
+      .site-nav__links a[aria-current="true"] {
+        color: #ffffff;
+      }
+
+      .site-nav__links a[aria-current="true"]:hover {
+        background: transparent;
+      }
+
+      .site-nav__cta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .site-nav__toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 2.35rem;
+        height: 2.35rem;
+        padding: 0 0.7rem;
+        border: 1px solid var(--border-glass);
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.04);
+        cursor: pointer;
+        transition: background 0.2s var(--ease);
+      }
+
+      .site-nav__toggle:hover {
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      .site-nav__toggle:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      .site-nav__toggle span {
+        display: block;
+        height: 1.5px;
+        border-radius: 2px;
+        background: var(--cream);
+        transition: transform 0.35s var(--ease);
+      }
+
+      .site-nav__toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(3.25px) rotate(45deg);
+      }
+
+      .site-nav__toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-3.25px) rotate(-45deg);
+      }
+
+      .site-nav__sheet {
+        pointer-events: auto;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 1.25rem;
+        right: 1.25rem;
+        display: grid;
+        gap: 0.15rem;
+        padding: 0.5rem;
+        border: 1px solid var(--border-glass);
+        border-radius: 1.25rem;
+        background: rgba(12, 6, 28, 0.94);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.1),
+          0 24px 60px -12px rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transform: translateY(-8px) scale(0.98);
+        transform-origin: top center;
+        transition:
+          opacity 0.25s var(--ease),
+          transform 0.35s var(--ease);
+      }
+
+      .site-nav__sheet[hidden] {
+        display: none;
+      }
+
+      .site-nav__sheet.is-open {
+        opacity: 1;
+        transform: none;
+      }
+
+      .site-nav__sheet a {
+        padding: 0.85rem 1rem;
+        border-radius: 0.85rem;
+        font-weight: 500;
+        color: var(--cream-muted);
+        transition:
+          background 0.2s var(--ease),
+          color 0.2s var(--ease);
+      }
+
+      .site-nav__sheet a:hover,
+      .site-nav__sheet a:focus-visible {
+        background: rgba(255, 255, 255, 0.06);
+        color: #ffffff;
+        outline: none;
+      }
+
+      @media (min-width: 768px) {
+        .site-nav__toggle,
+        .site-nav__sheet {
+          display: none !important;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .site-nav__brand {
+          font-size: 0.84rem;
+        }
+
+        .site-nav__shell {
+          gap: 0.5rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js main :is(.section-tag, h2, .rules__lede, .now__lede, .clients__via, .focus__copy, .rules__card, .focus__card, .now__card, .carousel, .contact__box, .stats__item):not(.reveal-done) {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+        .site-nav__indicator,
+        .site-nav__sheet,
+        .site-nav__toggle span {
+          transition: none;
+        }
+      }
+
       /* —— Keyframe Animations —— */
       @keyframes rise {
         to {
@@ -1760,6 +1970,7 @@
           Brandon Gallagher
         </a>
         <nav class="site-nav__links" aria-label="Primary">
+          <span class="site-nav__indicator" aria-hidden="true"></span>
           <a href="#philosophy">Philosophy</a>
           <a href="#now">Now</a>
           <a href="#work">Work</a>
@@ -1767,6 +1978,16 @@
           <a href="#contact">Contact</a>
         </nav>
         <div class="site-nav__cta">
+          <button
+            class="site-nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
           <a
             class="btn btn--primary"
             href="https://calendly.com/brandonegallagher/30-minute-meeting"
@@ -1776,7 +1997,15 @@
             Book a call
           </a>
         </div>
+        <span class="site-nav__progress" aria-hidden="true"></span>
       </div>
+      <nav id="mobile-menu" class="site-nav__sheet" aria-label="Mobile" hidden>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#now">Now</a>
+        <a href="#work">Work</a>
+        <a href="#capability">Capability</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
 
     <svg
@@ -3346,6 +3575,132 @@
           },
           { passive: true }
         );
+      })();
+
+      (function initReveal() {
+        const selector =
+          ".section-tag, h2, .rules__lede, .now__lede, .clients__via, .focus__copy, .rules__card, .focus__card, .now__card, .carousel, .contact__box, .stats__item";
+        const items = [...document.querySelectorAll("main :is(" + selector + ")")];
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const finish = (el) => el.classList.add("reveal-done");
+        if (reduced || !("IntersectionObserver" in window)) {
+          items.forEach(finish);
+          return;
+        }
+
+        // Stagger siblings in grids/lists (cap so long lists don't feel slow).
+        items.forEach((el) => {
+          const siblings = [...el.parentElement.children].filter((c) => items.includes(c));
+          if (siblings.length > 1) el.style.setProperty("--i", Math.min(siblings.indexOf(el), 5));
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target;
+              observer.unobserve(el);
+              el.classList.add("is-revealed");
+              const delay = parseFloat(getComputedStyle(el).transitionDelay) || 0;
+              // Hand control back to the element's own styles (hover lifts etc.) once done.
+              window.setTimeout(() => {
+                finish(el);
+                el.classList.remove("is-revealed");
+              }, 950 + delay * 1000);
+            });
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+        );
+        items.forEach((el) => observer.observe(el));
+      })();
+
+      (function initScrollSpy() {
+        const nav = document.querySelector(".site-nav__links");
+        const indicator = nav && nav.querySelector(".site-nav__indicator");
+        if (!nav || !indicator || !("IntersectionObserver" in window)) return;
+
+        const links = [...nav.querySelectorAll("a[href^='#']")];
+        const sheetLinks = [...document.querySelectorAll(".site-nav__sheet a")];
+        const sections = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+        let active = null;
+
+        const place = () => {
+          const link = links.find((a) => a.getAttribute("href") === "#" + active);
+          nav.classList.toggle("has-active", Boolean(link));
+          if (!link) return;
+          indicator.style.setProperty("--x", link.offsetLeft + "px");
+          indicator.style.setProperty("--w", link.offsetWidth + "px");
+        };
+
+        const setActive = (id) => {
+          if (id === active) return;
+          active = id;
+          [...links, ...sheetLinks].forEach((a) => {
+            if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "true");
+            else a.removeAttribute("aria-current");
+          });
+          place();
+        };
+
+        // Track which sections cross a thin band near the top third of the viewport.
+        const visible = new Set();
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) visible.add(entry.target.id);
+              else visible.delete(entry.target.id);
+            });
+            const current = sections.find((s) => visible.has(s.id));
+            setActive(current ? current.id : null);
+          },
+          { rootMargin: "-35% 0px -60% 0px" }
+        );
+        sections.forEach((s) => observer.observe(s));
+        window.addEventListener("resize", place, { passive: true });
+        document.fonts && document.fonts.ready.then(place);
+      })();
+
+      (function initMobileMenu() {
+        const toggle = document.querySelector(".site-nav__toggle");
+        const sheet = document.getElementById("mobile-menu");
+        if (!toggle || !sheet) return;
+        let closeTimer = 0;
+        const isOpen = () => toggle.getAttribute("aria-expanded") === "true";
+
+        const open = () => {
+          window.clearTimeout(closeTimer);
+          sheet.hidden = false;
+          window.requestAnimationFrame(() =>
+            window.requestAnimationFrame(() => sheet.classList.add("is-open"))
+          );
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.setAttribute("aria-label", "Close menu");
+        };
+
+        const close = (returnFocus) => {
+          sheet.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Open menu");
+          closeTimer = window.setTimeout(() => {
+            sheet.hidden = true;
+          }, 320);
+          if (returnFocus) toggle.focus();
+        };
+
+        toggle.addEventListener("click", () => (isOpen() ? close(false) : open()));
+        sheet.addEventListener("click", (event) => {
+          if (event.target.closest("a")) close(false);
+        });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && isOpen()) close(true);
+        });
+        document.addEventListener("click", (event) => {
+          if (isOpen() && !event.target.closest(".site-nav")) close(false);
+        });
+        window.matchMedia("(min-width: 768px)").addEventListener("change", (event) => {
+          if (event.matches && isOpen()) close(false);
+        });
       })();
     </script>
   </body>
