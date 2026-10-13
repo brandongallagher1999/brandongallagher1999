@@ -1482,6 +1482,186 @@
         border: 0;
       }
 
+      /* —— Premium detailing —— */
+      body {
+        font-kerning: normal;
+      }
+
+      .rules__index {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Italic serif accent on section headings */
+      h2 em {
+        font-style: italic;
+        padding-right: 0.06em; /* keep italic overhang from clipping under background-clip */
+        background: linear-gradient(100deg, #f3e8ff 0%, #c4b5fd 45%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Static film grain — rasterized once, no blend mode (cheap over the animated sky) */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      /* Cursor spotlight on cards (pointer position via CSS vars, opacity-only fade) */
+      .rules__card,
+      .focus__card,
+      .now__card,
+      .client-card {
+        isolation: isolate;
+        --mx: 50%;
+        --my: 0%;
+      }
+
+      .rules__card::before,
+      .focus__card::before,
+      .now__card::before,
+      .client-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        pointer-events: none;
+        background: radial-gradient(
+          480px circle at var(--mx) var(--my),
+          rgba(167, 139, 250, 0.13),
+          transparent 60%
+        );
+        opacity: 0;
+        transition: opacity 0.4s var(--ease);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .rules__card:hover::before,
+        .focus__card:hover::before,
+        .now__card:hover::before,
+        .client-card:hover::before {
+          opacity: 1;
+        }
+      }
+
+      /* Primary button: specular sweep on hover */
+      .btn--primary {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .btn--primary::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+          105deg,
+          transparent 35%,
+          rgba(255, 255, 255, 0.32) 50%,
+          transparent 65%
+        );
+        transform: translateX(-120%);
+        transition: transform 0.8s var(--ease);
+      }
+
+      @media (hover: hover) {
+        .btn--primary:hover::after {
+          transform: translateX(120%);
+        }
+      }
+
+      .btn:active {
+        transform: translateY(0) scale(0.98);
+      }
+
+      /* Footer */
+      .site-footer {
+        text-align: left;
+        padding: 2.5rem 0 2.75rem;
+      }
+
+      .site-footer__inner {
+        width: min(1120px, calc(100% - 3rem));
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem 2rem;
+      }
+
+      .site-footer__brand {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: 1.4rem;
+        line-height: 1.1;
+        color: var(--cream);
+      }
+
+      .site-footer__brand span {
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.02em;
+        color: var(--cream-faint);
+      }
+
+      .site-footer__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 1.35rem;
+      }
+
+      .site-footer__links a {
+        font-size: 0.86rem;
+        color: var(--cream-muted);
+        transition: color 0.2s var(--ease);
+      }
+
+      .site-footer__links a:hover {
+        color: #ffffff;
+      }
+
+      .site-footer__links a:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      .site-footer__legal {
+        width: 100%;
+        margin: 0;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--border-subtle);
+        font-size: 0.78rem;
+        color: var(--cream-faint);
+      }
+
+      @media (max-width: 720px) {
+        .site-footer__inner {
+          width: calc(100% - 2rem);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .btn--primary::after,
+        .rules__card::before,
+        .focus__card::before,
+        .now__card::before,
+        .client-card::before {
+          transition: none;
+        }
+      }
+
       /* —— Keyframe Animations —— */
       @keyframes rise {
         to {
@@ -1730,7 +1910,7 @@
             <span class="section-tag__dot"></span>
             <span>Operating Rules</span>
           </div>
-          <h2 id="rules-title" class="rules__title">Engineering philosophy—non-negotiable.</h2>
+          <h2 id="rules-title" class="rules__title">Engineering philosophy—<em>non-negotiable.</em></h2>
           <p class="rules__lede">
             Opinionated standards for shipping agentic infrastructure under
             compliance pressure without trading velocity for rigor.
@@ -1781,7 +1961,7 @@
             <span class="section-tag__dot section-tag__dot--pulse"></span>
             <span>Active Now</span>
           </div>
-          <h2 id="now-title" class="now__title">Shipping high-consequence architecture now.</h2>
+          <h2 id="now-title" class="now__title">Shipping high-consequence architecture <em>now.</em></h2>
           <p class="now__lede">
             Current build where agent containment, policy gates, and observability
             are load-bearing.
@@ -1841,7 +2021,7 @@
                 <span class="section-tag__dot"></span>
                 <span>Platforms Shipped</span>
               </div>
-              <h2 id="clients-title" class="rules__title" style="margin: 0;">Proof / platforms shipped</h2>
+              <h2 id="clients-title" class="rules__title" style="margin: 0;">Proof / platforms <em>shipped</em></h2>
             </div>
             <p class="clients__via">
               Hard metrics and architectural trade-offs from a tech leader across payments, platforms, and national programs
@@ -2415,7 +2595,7 @@
             <span>Capability</span>
           </div>
           <h2 id="focus-title" class="focus__title">
-            Control planes, landing zones, and Kubernetes—owned end-to-end.
+            Control planes, landing zones, and Kubernetes—<em>owned end-to-end.</em>
           </h2>
           <p class="focus__copy">
             The stack I ship with when the blast radius is real: deterministic agent
@@ -2492,7 +2672,7 @@
                 <span class="section-tag__dot section-tag__dot--pulse"></span>
                 <span>Get In Touch</span>
               </div>
-              <h2 id="contact-title">Ready to ship. Let’s talk.</h2>
+              <h2 id="contact-title">Ready to ship. <em>Let’s talk.</em></h2>
               <p>Direct email or thirty minutes on the calendar—no forms, no gatekeeping.</p>
             </div>
             <div class="contact__actions">
@@ -2530,7 +2710,20 @@
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> Brandon Gallagher · Built with deterministic precision · Toronto, Canada</p>
+      <div class="site-footer__inner">
+        <p class="site-footer__brand">
+          Brandon Gallagher
+          <span>AI Platform Engineer · Toronto, Canada</span>
+        </p>
+        <nav class="site-footer__links" aria-label="Footer">
+          <a href="https://github.com/brandongallagher1999" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/brandonegallagher/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:brandonegallagher@gmail.com">Email</a>
+          <a href="assets/Brandon-Gallagher-Resume.pdf" download="Brandon-Gallagher-Resume.pdf">Resume</a>
+          <a href="#">Back to top <span aria-hidden="true">↑</span></a>
+        </nav>
+        <p class="site-footer__legal">© <span id="year"></span> Brandon Gallagher. All rights reserved.</p>
+      </div>
     </footer>
 
     <script>
@@ -3120,6 +3313,39 @@
 
         resize();
         start();
+      })();
+
+      (function initSpotlight() {
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+        const selector = ".rules__card, .focus__card, .now__card, .client-card";
+        let card = null;
+        let x = 0;
+        let y = 0;
+        let queued = false;
+
+        const update = () => {
+          queued = false;
+          if (!card) return;
+          const box = card.getBoundingClientRect();
+          card.style.setProperty("--mx", (x - box.left).toFixed(1) + "px");
+          card.style.setProperty("--my", (y - box.top).toFixed(1) + "px");
+        };
+
+        document.addEventListener(
+          "pointermove",
+          (event) => {
+            const hit = event.target.closest(selector);
+            if (!hit) return;
+            card = hit;
+            x = event.clientX;
+            y = event.clientY;
+            if (!queued) {
+              queued = true;
+              window.requestAnimationFrame(update);
+            }
+          },
+          { passive: true }
+        );
       })();
     </script>
   </body>
