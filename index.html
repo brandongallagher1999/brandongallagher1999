@@ -1872,6 +1872,84 @@
         }
       }
 
+      /* —— Impact stats —— */
+      .stats {
+        padding: 0 0 4.5rem;
+      }
+
+      .stats__list {
+        width: min(1120px, calc(100% - 3rem));
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .stats__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        padding: 1.75rem 1.25rem 0.25rem;
+        border-left: 1px solid var(--border-subtle);
+      }
+
+      .stats__item:nth-child(odd) {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .stats__item:nth-child(n + 3) {
+        border-top: 1px solid var(--border-subtle);
+        margin-top: 1.5rem;
+      }
+
+      @media (min-width: 860px) {
+        .stats__list {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .stats__item,
+        .stats__item:nth-child(odd),
+        .stats__item:nth-child(n + 3) {
+          border-top: 0;
+          margin-top: 0;
+          padding: 2rem 1.5rem 0.25rem;
+          border-left: 1px solid var(--border-subtle);
+        }
+
+        .stats__item:first-child {
+          border-left: 0;
+          padding-left: 0;
+        }
+      }
+
+      .stats__value {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        font-variant-numeric: tabular-nums;
+        background: linear-gradient(180deg, #ffffff 30%, #c4b5fd 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stats__label {
+        max-width: 24ch;
+        font-size: 0.86rem;
+        line-height: 1.5;
+        color: var(--cream-muted);
+      }
+
+      @media (max-width: 720px) {
+        .stats__list {
+          width: calc(100% - 2rem);
+        }
+      }
+
       /* —— Keyframe Animations —— */
       @keyframes rise {
         to {
@@ -2133,6 +2211,30 @@
     </header>
 
     <main id="main-content">
+      <section class="stats" aria-label="Impact at a glance">
+        <ul class="stats__list">
+            <li class="stats__item">
+              <span class="stats__value" data-count="30" data-suffix="M+" aria-hidden="true">30M+</span>
+              <span class="sr-only">30M+</span>
+              <span class="stats__label">Canadians served by platforms I’ve shipped</span>
+            </li>
+            <li class="stats__item">
+              <span class="stats__value" data-count="160" data-suffix="+" aria-hidden="true">160+</span>
+              <span class="sr-only">160+</span>
+              <span class="stats__label">Repositories migrated to GitHub Actions</span>
+            </li>
+            <li class="stats__item">
+              <span class="stats__value" data-count="1200" data-suffix="+" aria-hidden="true">1,200+</span>
+              <span class="sr-only">1,200+</span>
+              <span class="stats__label">Engineering hours recovered per year</span>
+            </li>
+            <li class="stats__item">
+              <span class="stats__value" data-count="5000" data-suffix="+" aria-hidden="true">5,000+</span>
+              <span class="sr-only">5,000+</span>
+              <span class="stats__label">IAM requests automated on OpenShift</span>
+            </li>
+        </ul>
+      </section>
       <section id="philosophy" class="rules" aria-labelledby="rules-title">
         <div class="rules__inner">
           <div class="section-tag">
@@ -3700,6 +3802,43 @@
         });
         window.matchMedia("(min-width: 768px)").addEventListener("change", (event) => {
           if (event.matches && isOpen()) close(false);
+        });
+      })();
+
+      (function initCountUp() {
+        const values = [...document.querySelectorAll(".stats__value[data-count]")];
+        if (!values.length || !("IntersectionObserver" in window)) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        const format = new Intl.NumberFormat("en-CA");
+        const DURATION = 1600;
+        const easeOutExpo = (t) => (t >= 1 ? 1 : 1 - Math.pow(2, -10 * t));
+
+        const run = (el) => {
+          const target = Number(el.dataset.count);
+          const suffix = el.dataset.suffix || "";
+          const startAt = performance.now();
+          const step = (now) => {
+            const p = Math.min((now - startAt) / DURATION, 1);
+            el.textContent = format.format(Math.round(target * easeOutExpo(p))) + suffix;
+            if (p < 1) window.requestAnimationFrame(step);
+          };
+          window.requestAnimationFrame(step);
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              observer.unobserve(entry.target);
+              run(entry.target);
+            });
+          },
+          { threshold: 0.6 }
+        );
+        values.forEach((el) => {
+          el.textContent = "0" + (el.dataset.suffix || "");
+          observer.observe(el);
         });
       })();
     </script>
