@@ -1891,8 +1891,14 @@
         display: flex;
         flex-direction: column;
         gap: 0.55rem;
-        padding: 1.75rem 1.25rem 0.25rem;
+        padding: 1.75rem 1.25rem 0.5rem;
         border-left: 1px solid var(--border-subtle);
+        transition: background-color 0.4s var(--ease);
+      }
+
+      .stats__item--highlight {
+        position: relative;
+        background: radial-gradient(120% 120% at 0% 0%, rgba(167, 139, 250, 0.05) 0%, transparent 80%);
       }
 
       .stats__item:nth-child(odd) {
@@ -1915,7 +1921,7 @@
         .stats__item:nth-child(n + 3) {
           border-top: 0;
           margin-top: 0;
-          padding: 2rem 1.5rem 0.25rem;
+          padding: 2rem 1.5rem 0.5rem;
           border-left: 1px solid var(--border-subtle);
         }
 
@@ -1923,6 +1929,27 @@
           border-left: 0;
           padding-left: 0;
         }
+      }
+
+      .stats__kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 0.6875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #d6c4ff;
+      }
+
+      .stats__dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #a78bfa;
+        box-shadow: 0 0 10px #8b5cf6;
+        flex-shrink: 0;
       }
 
       .stats__value {
@@ -1938,10 +1965,15 @@
       }
 
       .stats__label {
-        max-width: 24ch;
+        max-width: 28ch;
         font-size: 0.86rem;
         line-height: 1.5;
         color: var(--cream-muted);
+      }
+
+      .stats__label strong {
+        color: var(--cream);
+        font-weight: 500;
       }
 
       @media (max-width: 720px) {
@@ -2213,26 +2245,30 @@
     <main id="main-content">
       <section class="stats" aria-label="Impact at a glance">
         <ul class="stats__list">
-            <li class="stats__item">
-              <span class="stats__value" data-count="30" data-suffix="M+" aria-hidden="true">30M+</span>
-              <span class="sr-only">30M+</span>
-              <span class="stats__label">Canadians served by platforms I’ve shipped</span>
-            </li>
-            <li class="stats__item">
-              <span class="stats__value" data-count="160" data-suffix="+" aria-hidden="true">160+</span>
-              <span class="sr-only">160+</span>
-              <span class="stats__label">Repositories migrated to GitHub Actions</span>
-            </li>
-            <li class="stats__item">
-              <span class="stats__value" data-count="1200" data-suffix="+" aria-hidden="true">1,200+</span>
-              <span class="sr-only">1,200+</span>
-              <span class="stats__label">Engineering hours recovered per year</span>
-            </li>
-            <li class="stats__item">
-              <span class="stats__value" data-count="5000" data-suffix="+" aria-hidden="true">5,000+</span>
-              <span class="sr-only">5,000+</span>
-              <span class="stats__label">IAM requests automated on OpenShift</span>
-            </li>
+          <li class="stats__item stats__item--highlight" style="--i: 0">
+            <span class="stats__kicker"><span class="stats__dot" aria-hidden="true"></span> Enterprise Landing Zones</span>
+            <span class="stats__value" data-count="30" data-suffix="M+" aria-hidden="true">30M+</span>
+            <span class="sr-only">30M+ Canadians governed across enterprise-scale landing zones</span>
+            <span class="stats__label">Canadians governed across <strong>enterprise-scale landing zones</strong> (AWS &amp; Azure)</span>
+          </li>
+          <li class="stats__item stats__item--highlight" style="--i: 1">
+            <span class="stats__kicker"><span class="stats__dot" aria-hidden="true"></span> Agentic Control Planes (ACP)</span>
+            <span class="stats__value" data-count="100" data-suffix="%" aria-hidden="true">100%</span>
+            <span class="sr-only">100% deterministic containment across production Agentic Control Planes</span>
+            <span class="stats__label">Deterministic policy containment for enterprise <strong>Agentic Control Planes (ACP)</strong></span>
+          </li>
+          <li class="stats__item" style="--i: 2">
+            <span class="stats__kicker">Standardized CI/CD</span>
+            <span class="stats__value" data-count="160" data-suffix="+" aria-hidden="true">160+</span>
+            <span class="sr-only">160+ repositories migrated to standardized GitHub Actions pipelines</span>
+            <span class="stats__label">Repositories standardized on compliant GitHub Actions &amp; Terraform stacks</span>
+          </li>
+          <li class="stats__item" style="--i: 3">
+            <span class="stats__kicker">Zero Ops Backlog</span>
+            <span class="stats__value" data-count="5000" data-suffix="+" aria-hidden="true">5,000+</span>
+            <span class="sr-only">5,000+ IAM and cluster requests automated without manual ops debt</span>
+            <span class="stats__label">IAM &amp; infrastructure requests automated across OpenShift with zero ticket queue</span>
+          </li>
         </ul>
       </section>
       <section id="philosophy" class="rules" aria-labelledby="rules-title">
