@@ -18,7 +18,7 @@ Hosted via GitHub Pages from the repo root (`index.html`).
 ## Non-negotiables
 
 - Keep the hero as one composition: brand name first, one headline, one lede, one CTA group. No personal portrait.
-- Keep the luxury violet glass palette (`--charcoal`, `--leather`, `--cream`) and the galaxy canvas behind the page.
+- Keep the nebula-red glass palette (`--charcoal`, `--leather`, `--cream`) and the galaxy canvas behind the page.
 - Do not introduce a bundler, framework, or package manager unless explicitly requested.
 - Prefer Bun for any one-off tooling scripts (`bun`, `bunx`); never npm/yarn/pnpm unless asked.
 - Never commit secrets, credentials, or private contact details beyond what already lives on the public page.
