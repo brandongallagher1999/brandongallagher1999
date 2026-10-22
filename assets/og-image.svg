@@ -41,8 +41,8 @@
   <g transform="translate(96 118)">
     <text fill="#ffe8ec" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="0.14em">BRANDON GALLAGHER</text>
     <text y="92" fill="url(#titleGrad)" font-family="Instrument Serif, Georgia, serif" font-size="72" font-weight="400">AI Platform Engineer</text>
-    <text y="158" fill="#fffbfb" fill-opacity="0.92" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="28" font-weight="400">Deterministic agentic control planes</text>
-    <text y="198" fill="#fffbfb" fill-opacity="0.92" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="28" font-weight="400">for high-consequence financial systems</text>
+    <text y="158" fill="#fffbfb" fill-opacity="0.92" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="28" font-weight="400">Secure cloud and AI platforms</text>
+    <text y="198" fill="#fffbfb" fill-opacity="0.92" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="28" font-weight="400">for banks and financial companies</text>
     <rect y="248" width="120" height="4" rx="2" fill="url(#accent)"/>
     <text y="292" fill="#ffe8ec" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="22" font-weight="500">brandongallagher.com</text>
   </g>

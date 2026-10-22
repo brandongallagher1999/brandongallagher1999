@@ -7,7 +7,7 @@
     <title>Brandon Gallagher — AI Platform Engineer</title>
     <meta
       name="description"
-      content="Brandon Gallagher — AI Platform Engineer who builds deterministic, compliant agentic control planes and landing zones at extreme velocity for high-consequence financial systems."
+      content="Brandon Gallagher — AI Platform Engineer. Builds secure cloud platforms and production AI systems for banks and financial companies—fast delivery with strong compliance."
     />
     <meta name="author" content="Brandon Gallagher" />
     <meta name="robots" content="index, follow" />
@@ -21,7 +21,7 @@
     <meta property="og:title" content="Brandon Gallagher — AI Platform Engineer" />
     <meta
       property="og:description"
-      content="Deterministic agentic control planes and compliant landing zones—built at extreme velocity for high-consequence financial systems."
+      content="Secure cloud platforms and production AI systems for banks and financial companies—built quickly with strong compliance."
     />
     <meta property="og:locale" content="en_CA" />
     <meta property="og:site_name" content="Brandon Gallagher" />
@@ -30,18 +30,18 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Brandon Gallagher — AI Platform Engineer. Deterministic agentic control planes for high-consequence financial systems."
+      content="Brandon Gallagher — AI Platform Engineer. Secure cloud and AI platforms for banks and financial companies."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Brandon Gallagher — AI Platform Engineer" />
     <meta
       name="twitter:description"
-      content="Deterministic agentic control planes and compliant landing zones—built at extreme velocity for high-consequence financial systems."
+      content="Secure cloud platforms and production AI systems for banks and financial companies—built quickly with strong compliance."
     />
     <meta name="twitter:image" content="https://www.brandongallagher.com/assets/og-image.png" />
     <meta
       name="twitter:image:alt"
-      content="Brandon Gallagher — AI Platform Engineer. Deterministic agentic control planes for high-consequence financial systems."
+      content="Brandon Gallagher — AI Platform Engineer. Secure cloud and AI platforms for banks and financial companies."
     />
     <meta name="theme-color" content="#0c0507" />
     <meta name="color-scheme" content="dark" />
@@ -68,7 +68,7 @@
           "https://github.com/brandongallagher1999",
           "https://www.linkedin.com/in/brandonegallagher/"
         ],
-        "description": "AI Platform Engineer who builds deterministic, compliant agentic control planes and landing zones at extreme velocity for high-consequence financial systems.",
+        "description": "AI Platform Engineer who builds secure cloud platforms and production AI systems for banks and financial companies.",
         "knowsAbout": [
           "Agentic Control Planes",
           "Kubernetes",
@@ -585,57 +585,84 @@
       }
 
       .hero__trust {
-        margin-top: 2.75rem;
-        padding-top: 1.75rem;
-        border-top: 1px solid var(--border-subtle);
+        margin-top: 3rem;
         opacity: 0;
         transform: translateY(12px);
         animation: rise 0.9s var(--ease) 0.82s forwards;
       }
 
+      /* Mobbin-style framed logo rail (Teak / Greptile / Hashnode pattern) */
+      .hero__trust-frame {
+        position: relative;
+        padding: 1.85rem 1.15rem 1.25rem;
+        border: 1px solid var(--border-glass);
+        border-radius: var(--radius-card-sm);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
       .hero__trust-label {
-        margin: 0 0 1rem;
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--cream-faint);
-        text-shadow: var(--text-shadow-soft);
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        margin: 0;
+        padding: 0.32rem 0.72rem;
+        transform: translateY(-50%);
+        border: 1px solid var(--border-glass);
+        border-radius: 0.45rem;
+        background: var(--charcoal-soft);
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: lowercase;
+        color: var(--cream-muted);
+        text-shadow: none;
+        box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.55);
       }
 
       .hero__trust-logos {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1.5rem 2.25rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.15rem 0.85rem;
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
+      @media (min-width: 640px) {
+        .hero__trust-logos {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          gap: 1rem 0.65rem;
+        }
+      }
+
       .hero__trust-logos li {
         display: flex;
         align-items: center;
-        height: 1.6rem;
+        justify-content: center;
+        min-height: 2.35rem;
+        padding: 0.35rem 0.5rem;
       }
 
       .hero__trust-logos img {
         display: block;
         width: auto;
-        max-width: 6.25rem;
-        max-height: 1.5rem;
+        max-width: 100%;
+        max-height: 1.7rem;
         object-fit: contain;
-        object-position: left center;
-        opacity: 0.62;
-        filter: grayscale(1) brightness(1.35);
+        object-position: center;
+        opacity: 0.8;
+        filter: grayscale(1) brightness(1.42) contrast(0.92);
         transition:
           opacity 0.25s var(--ease),
           filter 0.25s var(--ease);
       }
 
-      .hero__trust-logos li:hover img {
-        opacity: 0.95;
-        filter: grayscale(0) brightness(1.1);
+      @media (hover: hover) and (pointer: fine) {
+        .hero__trust-logos li:hover img {
+          opacity: 1;
+          filter: grayscale(0) brightness(1.08);
+        }
       }
 
       /* —— Operating rules (Philosophy) —— */
@@ -2130,10 +2157,10 @@
         </a>
         <nav class="site-nav__links" aria-label="Primary">
           <span class="site-nav__indicator" aria-hidden="true"></span>
-          <a href="#philosophy">Philosophy</a>
+          <a href="#philosophy">How I work</a>
           <a href="#now">Now</a>
           <a href="#work">Work</a>
-          <a href="#capability">Capability</a>
+          <a href="#capability">What I do</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="site-nav__cta">
@@ -2159,10 +2186,10 @@
         <span class="site-nav__progress" aria-hidden="true"></span>
       </div>
       <nav id="mobile-menu" class="site-nav__sheet" aria-label="Mobile" hidden>
-        <a href="#philosophy">Philosophy</a>
+        <a href="#philosophy">How I work</a>
         <a href="#now">Now</a>
         <a href="#work">Work</a>
-        <a href="#capability">Capability</a>
+        <a href="#capability">What I do</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -2206,12 +2233,12 @@
         <div class="hero__copy">
           <h1 class="hero__brand">Brandon Gallagher</h1>
           <p class="hero__headline">
-            Deterministic agentic infrastructure—built at extreme velocity
+            Secure cloud and AI infrastructure—built quickly
           </p>
           <p class="hero__lede">
-            I own compliant landing zones and control planes end-to-end: IaC,
-            containment, Kubernetes delivery, and production AI harnesses for
-            high-consequence financial systems. No ticket theater. No manual ops debt.
+            I design and run secure cloud environments and production AI systems
+            for banks and financial companies—from infrastructure and security rules
+            through live deployment. Less busywork for teams. Fewer tickets piling up.
           </p>
           <div class="hero__actions">
             <a
@@ -2265,8 +2292,9 @@
             </a>
           </nav>
           <div class="hero__trust">
-            <p class="hero__trust-label">Platforms shipped for</p>
-            <ul class="hero__trust-logos">
+            <div class="hero__trust-frame">
+              <p class="hero__trust-label">companies I've built for</p>
+              <ul class="hero__trust-logos">
               <li>
                 <img src="assets/logos/scotiabank.png" alt="Scotiabank" width="934" height="170" decoding="async" />
               </li>
@@ -2285,7 +2313,8 @@
               <li>
                 <img src="assets/logos/deloitte.png" alt="Deloitte" width="685" height="130" decoding="async" />
               </li>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -2295,28 +2324,28 @@
       <section class="stats" aria-label="Impact at a glance">
         <ul class="stats__list">
           <li class="stats__item stats__item--highlight" style="--i: 0">
-            <span class="stats__kicker"><span class="stats__dot" aria-hidden="true"></span> Enterprise Landing Zones</span>
+            <span class="stats__kicker"><span class="stats__dot" aria-hidden="true"></span> Cloud foundations</span>
             <span class="stats__value" data-count="30" data-suffix="M+" aria-hidden="true">30M+</span>
-            <span class="sr-only">30M+ Canadians governed across enterprise-scale landing zones</span>
-            <span class="stats__label">Canadians governed across <strong>enterprise-scale landing zones</strong> (AWS &amp; Azure)</span>
+            <span class="sr-only">30M+ Canadians served by secure cloud foundations Brandon helped build</span>
+            <span class="stats__label">Secure cloud foundations used by <strong>30M+ Canadians</strong> on AWS and Azure</span>
           </li>
           <li class="stats__item stats__item--highlight" style="--i: 1">
-            <span class="stats__kicker"><span class="stats__dot" aria-hidden="true"></span> Agentic Control Planes (ACP)</span>
+            <span class="stats__kicker"><span class="stats__dot" aria-hidden="true"></span> AI guardrails</span>
             <span class="stats__value" data-count="100" data-suffix="%" aria-hidden="true">100%</span>
-            <span class="sr-only">100% deterministic containment across production Agentic Control Planes</span>
-            <span class="stats__label">Deterministic policy containment for enterprise <strong>Agentic Control Planes (ACP)</strong></span>
+            <span class="sr-only">Full policy control for production AI systems</span>
+            <span class="stats__label"><strong>Rules and limits</strong> for enterprise AI so production stays controlled</span>
           </li>
           <li class="stats__item" style="--i: 2">
-            <span class="stats__kicker">Standardized CI/CD</span>
+            <span class="stats__kicker">Standard pipelines</span>
             <span class="stats__value" data-count="160" data-suffix="+" aria-hidden="true">160+</span>
-            <span class="sr-only">160+ repositories migrated to standardized GitHub Actions pipelines</span>
-            <span class="stats__label">Repositories standardized on compliant GitHub Actions &amp; Terraform stacks</span>
+            <span class="sr-only">160+ code repositories moved to the same secure GitHub release process</span>
+            <span class="stats__label"><strong>160+ repos</strong> on the same secure GitHub and Terraform release process</span>
           </li>
           <li class="stats__item" style="--i: 3">
-            <span class="stats__kicker">Zero Ops Backlog</span>
+            <span class="stats__kicker">Automated requests</span>
             <span class="stats__value" data-count="5000" data-suffix="+" aria-hidden="true">5,000+</span>
-            <span class="sr-only">5,000+ IAM and cluster requests automated without manual ops debt</span>
-            <span class="stats__label">IAM &amp; infrastructure requests automated across OpenShift with zero ticket queue</span>
+            <span class="sr-only">5,000+ access and cluster requests handled automatically</span>
+            <span class="stats__label"><strong>5,000+ access requests</strong> automated on OpenShift—no growing ticket queue</span>
           </li>
         </ul>
       </section>
@@ -2324,47 +2353,47 @@
         <div class="rules__inner">
           <div class="section-tag">
             <span class="section-tag__dot"></span>
-            <span>Operating Rules</span>
+            <span>How I work</span>
           </div>
-          <h2 id="rules-title" class="rules__title">Engineering philosophy—<em>non-negotiable.</em></h2>
+          <h2 id="rules-title" class="rules__title">How I work—<em>every time.</em></h2>
           <p class="rules__lede">
-            Opinionated standards for shipping agentic infrastructure under
-            compliance pressure without trading velocity for rigor.
+            Simple rules for building AI and cloud systems quickly—while still
+            meeting bank-grade security and compliance.
           </p>
           <ol class="rules__list">
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">01</span>
               <div>
-                <strong>Automate the pattern, not the ticket</strong>
-                <p>Recurring ops work is a systems failure. Resolve classes of problems with workflows and control planes—never grow a queue.</p>
+                <strong>Automate the work, not every ticket</strong>
+                <p>If the same request keeps showing up, that's a process problem. Fix the whole category with automation—not a growing queue.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">02</span>
               <div>
-                <strong>Security lives in IaC</strong>
-                <p>PCI-DSS, SOC 2, and NIST are encoded in Terraform and pipelines. If it isn’t in the graph, it doesn’t ship.</p>
+                <strong>Security is built into the code</strong>
+                <p>PCI-DSS, SOC 2, and NIST requirements live in Terraform and CI/CD. If it's not in the automated setup, it doesn't go live.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">03</span>
               <div>
-                <strong>Zero tolerance for manual operational debt</strong>
-                <p>Runbooks that require heroics are unfinished design. Self-service account vending, deterministic deploy paths, no snowflake clusters.</p>
+                <strong>No piles of manual work</strong>
+                <p>If only a hero can run the playbook, the design isn't finished. Self-service access, repeatable deployments, no one-off servers.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">04</span>
               <div>
-                <strong>Deterministic boundaries for agentic systems</strong>
-                <p>Containment, policy, and observability are first-class architecture—not a bolt-on after the demo works.</p>
+                <strong>Clear limits for AI systems</strong>
+                <p>Safety rules, approvals, and monitoring are part of the design from day one—not added after a demo works.</p>
               </div>
             </li>
             <li class="rules__card">
               <span class="rules__index" aria-hidden="true">05</span>
               <div>
-                <strong>Own the architecture end-to-end</strong>
-                <p>Trade-offs are explicit and owned. Hosted vs open-source, managed vs DIY—chosen for deploy velocity and blast-radius control.</p>
+                <strong>Own the full solution</strong>
+                <p>Trade-offs are explicit. Choose hosted vs open-source based on speed to production and what happens if something breaks.</p>
               </div>
             </li>
           </ol>
@@ -2377,10 +2406,10 @@
             <span class="section-tag__dot section-tag__dot--pulse"></span>
             <span>Active Now</span>
           </div>
-          <h2 id="now-title" class="now__title">Shipping high-consequence architecture <em>now.</em></h2>
+          <h2 id="now-title" class="now__title">What I'm building <em>right now.</em></h2>
           <p class="now__lede">
-            Current build where agent containment, policy gates, and observability
-            are load-bearing.
+            Live work focused on keeping AI tools safe, approved, and easy to
+            monitor in production.
           </p>
           <div class="now__grid">
             <article class="now__card">
@@ -2391,20 +2420,20 @@
                   </div>
                   <span class="now__status-pill">
                     <span class="section-tag__dot section-tag__dot--pulse"></span>
-                    Live Deployment
+                    In production
                   </span>
                 </div>
                 <div>
                   <p class="now__role">AI Platform Engineer</p>
-                  <h3>High-performance agentic harness</h3>
+                  <h3>Production AI platform</h3>
                 </div>
                 <p class="now__card-copy">
-                  Production control plane for multi-agent workloads: strict containment,
-                  policy gates, and observable tool use—designed for enterprise blast-radius limits.
+                  A control layer for multi-agent AI: clear limits on what tools can do,
+                  approval steps, and full visibility—built for enterprise risk standards.
                 </p>
               </div>
               <div class="now__card-side">
-                <p class="now__side-label">Active Stack</p>
+                <p class="now__side-label">Tools in use</p>
                 <ul class="now__badges" aria-label="Tools used: LangGraph, Kubernetes, AgentGateway, and GCP">
                   <li>
                     <img src="assets/logos/tech/langgraph.svg" alt="" width="18" height="18" loading="lazy" decoding="async" />
@@ -2435,12 +2464,12 @@
             <div>
               <div class="section-tag">
                 <span class="section-tag__dot"></span>
-                <span>Platforms Shipped</span>
+                <span>Client work</span>
               </div>
-              <h2 id="clients-title" class="rules__title" style="margin: 0;">Proof / platforms <em>shipped</em></h2>
+              <h2 id="clients-title" class="rules__title" style="margin: 0;">Client work <em>delivered</em></h2>
             </div>
             <p class="clients__via">
-              Hard metrics and architectural trade-offs from a tech leader across payments, platforms, and national programs
+              Results from banks, payments companies, and large public programs
             </p>
           </div>
           <div
@@ -2469,22 +2498,22 @@
             <div class="carousel__viewport">
               <div class="carousel__track">
                 <div class="carousel__group">
-                  <article class="client-card" aria-label="Nezz: Programmable payments machine">
+                  <article class="client-card" aria-label="Nezz: Payments platform in production">
                     <div class="client-card__mark">
                       <img src="assets/logos/nezz.png" alt="Nezz" width="438" height="190" loading="lazy" decoding="async" />
                     </div>
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Programmable payments machine in production—deterministic state machines, multi-party settlement paths, and audit-ready event trails (CTO &amp; Co-Founder)</dd>
+                        <dd>Built a payments platform in production as CTO &amp; Co-Founder—clear payment flows, multi-party settlement, and audit logs</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Settlement orchestration as state machines—not ticket-driven payment ops; backed by operators from BMO, Amex, Mastercard, and MIT Innovation Labs</dd>
+                        <dt>Approach</dt>
+                        <dd>Automated payment flows instead of teams chasing tickets; backed by operators from BMO, Amex, Mastercard, and MIT Innovation Labs</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Institutional settlement semantics first—audit trails and multi-party paths before feature breadth</dd>
+                        <dt>Key decision</dt>
+                        <dd>Get settlement and audit trails right first, then add features</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
@@ -2506,22 +2535,22 @@
                       </li>
                     </ul>
                   </article>
-                  <article class="client-card" aria-label="Scotiabank: Shipped enterprise Agentic Control Plane">
+                  <article class="client-card" aria-label="Scotiabank: Enterprise AI control platform">
                     <div class="client-card__mark">
                       <img src="assets/logos/scotiabank.png" alt="Scotiabank" width="934" height="170" loading="lazy" decoding="async" />
                     </div>
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Shipped an enterprise Agentic Control Plane with the AI Consortium—deterministic containment for production LLM workloads</dd>
+                        <dd>Delivered an enterprise AI control platform with the bank's AI Consortium—safe guardrails for AI in production</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Hosted control plane over open-source DIY—governance and deploy velocity beat flexibility at bank scale</dd>
+                        <dt>Approach</dt>
+                        <dd>Chose a managed platform over build-it-yourself to meet governance needs and ship faster at bank scale</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Vendor deploy-readiness is an architecture constraint—fail early or integration becomes the critical path</dd>
+                        <dt>Key decision</dt>
+                        <dd>Validate vendors early—late integration becomes the bottleneck</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
@@ -2550,15 +2579,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>160+ repos migrated to GitHub Actions—1,200+ engineering hours/year recovered via AI auto-remediation</dd>
+                        <dd>Moved 160+ repositories to GitHub Actions—saved 1,200+ engineering hours per year with AI-assisted fixes</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Org-wide shared workflows over per-repo pipelines—compliance scripts mandatory, not optional</dd>
+                        <dt>Approach</dt>
+                        <dd>One shared workflow for the whole org instead of custom pipelines per repo; compliance checks every time</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Align Node runtimes before enterprise rollout—version drift blocks adoption overnight</dd>
+                        <dt>Key decision</dt>
+                        <dd>Standardize software versions before rollout—mismatches stop adoption cold</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
@@ -2587,15 +2616,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Tier 1 CDIC fintech greenfield → production on Azure under PCI-DSS, SOC 2, and NIST</dd>
+                        <dd>Took a new CDIC-insured fintech from zero to production on Azure with PCI-DSS, SOC 2, and NIST requirements</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Container Apps + Terraform Stacks; Azure Firewall over Palo Alto to shrink managed ops surface</dd>
+                        <dt>Approach</dt>
+                        <dd>Azure Container Apps and Terraform; simplified firewall setup to reduce day-to-day ops load</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Bake compliance into IaC from day one—auditors read the graph, not a wiki</dd>
+                        <dt>Key decision</dt>
+                        <dd>Build compliance into infrastructure from day one—auditors review the automated setup, not a wiki</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
@@ -2617,22 +2646,22 @@
                       </li>
                     </ul>
                   </article>
-                  <article class="client-card" aria-label="Interac: AWS Control Tower landing zone for e-Transfer">
+                  <article class="client-card" aria-label="Interac: AWS landing zone for e-Transfer">
                     <div class="client-card__mark">
                       <img src="assets/logos/interac.png" alt="Interac" width="161" height="114" loading="lazy" decoding="async" />
                     </div>
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>AWS Control Tower landing zone in Terraform for e-Transfer—governed multi-account for 30M+ Canadians</dd>
+                        <dd>Built AWS landing zone in Terraform for e-Transfer—governed cloud accounts for 30M+ Canadians</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Control Tower + Terraform over ad-hoc account provisioning—zero-friction account vending</dd>
+                        <dt>Approach</dt>
+                        <dd>AWS Control Tower plus Terraform instead of one-off account setup; teams request accounts without tickets</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Landing zones only scale when account vending is self-service—not ticket-driven</dd>
+                        <dt>Key decision</dt>
+                        <dd>Landing zones work when new accounts are self-service—not email requests</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
@@ -2654,22 +2683,22 @@
                       </li>
                     </ul>
                   </article>
-                  <article class="client-card" aria-label="RBC: Automated 5,000+ IAM Jira requests on OpenShift">
+                  <article class="client-card" aria-label="RBC: Automated 5,000+ access requests on OpenShift">
                     <div class="client-card__mark">
                       <img src="assets/logos/rbc.png" alt="RBC" width="232" height="290" loading="lazy" decoding="async" />
                     </div>
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Automated 5,000+ IAM Jira requests on OpenShift—cleared a recurring ops bottleneck with zero added headcount</dd>
+                        <dd>Automated 5,000+ access and cluster requests on OpenShift—removed a recurring bottleneck without hiring</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Node.js microservice automation over manual ticket queues—pattern resolution at scale</dd>
+                        <dt>Approach</dt>
+                        <dd>Small automation service instead of manual Jira queues—fix the pattern, not each ticket</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>High-volume IAM is a workflow problem—automate the class, not the individual ticket</dd>
+                        <dt>Key decision</dt>
+                        <dd>High-volume access changes are a workflow problem—automate categories, not one-offs</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
@@ -2694,15 +2723,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Canada Post national track-and-trace—real-time stream integrity for 35M+ Canadians</dd>
+                        <dd>Canada Post national track-and-trace—real-time data quality for 35M+ Canadians</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Kafka stream-validation microservices over batch-only reconciliation</dd>
+                        <dt>Approach</dt>
+                        <dd>Check data as it arrives instead of fixing problems in batch jobs later</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Catch bad data at ingress—every downstream consumer pays for upstream gaps</dd>
+                        <dt>Key decision</dt>
+                        <dd>Catch bad data at the source—downstream teams pay for upstream gaps</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-label="Technologies used">
@@ -2733,15 +2762,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Programmable payments machine in production—deterministic state machines, multi-party settlement paths, and audit-ready event trails (CTO &amp; Co-Founder)</dd>
+                        <dd>Built a payments platform in production as CTO &amp; Co-Founder—clear payment flows, multi-party settlement, and audit logs</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Settlement orchestration as state machines—not ticket-driven payment ops; backed by operators from BMO, Amex, Mastercard, and MIT Innovation Labs</dd>
+                        <dt>Approach</dt>
+                        <dd>Automated payment flows instead of teams chasing tickets; backed by operators from BMO, Amex, Mastercard, and MIT Innovation Labs</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Institutional settlement semantics first—audit trails and multi-party paths before feature breadth</dd>
+                        <dt>Key decision</dt>
+                        <dd>Get settlement and audit trails right first, then add features</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
@@ -2770,15 +2799,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Shipped an enterprise Agentic Control Plane with the AI Consortium—deterministic containment for production LLM workloads</dd>
+                        <dd>Delivered an enterprise AI control platform with the bank's AI Consortium—safe guardrails for AI in production</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Hosted control plane over open-source DIY—governance and deploy velocity beat flexibility at bank scale</dd>
+                        <dt>Approach</dt>
+                        <dd>Chose a managed platform over build-it-yourself to meet governance needs and ship faster at bank scale</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Vendor deploy-readiness is an architecture constraint—fail early or integration becomes the critical path</dd>
+                        <dt>Key decision</dt>
+                        <dd>Validate vendors early—late integration becomes the bottleneck</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
@@ -2807,15 +2836,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>160+ repos migrated to GitHub Actions—1,200+ engineering hours/year recovered via AI auto-remediation</dd>
+                        <dd>Moved 160+ repositories to GitHub Actions—saved 1,200+ engineering hours per year with AI-assisted fixes</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Org-wide shared workflows over per-repo pipelines—compliance scripts mandatory, not optional</dd>
+                        <dt>Approach</dt>
+                        <dd>One shared workflow for the whole org instead of custom pipelines per repo; compliance checks every time</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Align Node runtimes before enterprise rollout—version drift blocks adoption overnight</dd>
+                        <dt>Key decision</dt>
+                        <dd>Standardize software versions before rollout—mismatches stop adoption cold</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
@@ -2844,15 +2873,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Tier 1 CDIC fintech greenfield → production on Azure under PCI-DSS, SOC 2, and NIST</dd>
+                        <dd>Took a new CDIC-insured fintech from zero to production on Azure with PCI-DSS, SOC 2, and NIST requirements</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Container Apps + Terraform Stacks; Azure Firewall over Palo Alto to shrink managed ops surface</dd>
+                        <dt>Approach</dt>
+                        <dd>Azure Container Apps and Terraform; simplified firewall setup to reduce day-to-day ops load</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Bake compliance into IaC from day one—auditors read the graph, not a wiki</dd>
+                        <dt>Key decision</dt>
+                        <dd>Build compliance into infrastructure from day one—auditors review the automated setup, not a wiki</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
@@ -2881,15 +2910,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>AWS Control Tower landing zone in Terraform for e-Transfer—governed multi-account for 30M+ Canadians</dd>
+                        <dd>Built AWS landing zone in Terraform for e-Transfer—governed cloud accounts for 30M+ Canadians</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Control Tower + Terraform over ad-hoc account provisioning—zero-friction account vending</dd>
+                        <dt>Approach</dt>
+                        <dd>AWS Control Tower plus Terraform instead of one-off account setup; teams request accounts without tickets</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Landing zones only scale when account vending is self-service—not ticket-driven</dd>
+                        <dt>Key decision</dt>
+                        <dd>Landing zones work when new accounts are self-service—not email requests</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
@@ -2918,15 +2947,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Automated 5,000+ IAM Jira requests on OpenShift—cleared a recurring ops bottleneck with zero added headcount</dd>
+                        <dd>Automated 5,000+ access and cluster requests on OpenShift—removed a recurring bottleneck without hiring</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Node.js microservice automation over manual ticket queues—pattern resolution at scale</dd>
+                        <dt>Approach</dt>
+                        <dd>Small automation service instead of manual Jira queues—fix the pattern, not each ticket</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>High-volume IAM is a workflow problem—automate the class, not the individual ticket</dd>
+                        <dt>Key decision</dt>
+                        <dd>High-volume access changes are a workflow problem—automate categories, not one-offs</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
@@ -2951,15 +2980,15 @@
                     <dl class="client-card__meta">
                       <div>
                         <dt>Impact</dt>
-                        <dd>Canada Post national track-and-trace—real-time stream integrity for 35M+ Canadians</dd>
+                        <dd>Canada Post national track-and-trace—real-time data quality for 35M+ Canadians</dd>
                       </div>
                       <div>
-                        <dt>Architecture</dt>
-                        <dd>Kafka stream-validation microservices over batch-only reconciliation</dd>
+                        <dt>Approach</dt>
+                        <dd>Check data as it arrives instead of fixing problems in batch jobs later</dd>
                       </div>
                       <div>
-                        <dt>Trade-off</dt>
-                        <dd>Catch bad data at ingress—every downstream consumer pays for upstream gaps</dd>
+                        <dt>Key decision</dt>
+                        <dd>Catch bad data at the source—downstream teams pay for upstream gaps</dd>
                       </div>
                     </dl>
                     <ul class="client-card__tech" aria-hidden="true">
@@ -3008,27 +3037,26 @@
         <div class="focus__inner">
           <div class="section-tag">
             <span class="section-tag__dot"></span>
-            <span>Capability</span>
+            <span>What I do</span>
           </div>
           <h2 id="focus-title" class="focus__title">
-            Control planes, landing zones, and Kubernetes—<em>owned end-to-end.</em>
+            Cloud platforms, security, and Kubernetes—<em>end to end.</em>
           </h2>
           <p class="focus__copy">
-            The stack I ship with when the blast radius is real: deterministic agent
-            boundaries, compliance encoded in IaC, and production clusters that don’t
-            require heroics to keep alive.
+            What I bring when mistakes are costly: safe AI boundaries, compliance built
+            into infrastructure, and production systems that don't need heroics to stay up.
           </p>
           <ul class="focus__list">
             <li class="focus__card">
               <div class="focus__card-header">
                 <span class="rules__index" aria-hidden="true">01</span>
-                <strong>Agentic Control Planes</strong>
+                <strong>AI control platforms</strong>
               </div>
               <span>
-                Harnesses with strict containment, policy gates, and automated
-                governance—production agent systems without hoping the demo holds.
+                Frameworks with strict limits, approval steps, and governance—production
+                AI that still works after the pilot.
               </span>
-              <ul class="focus__tools" aria-label="Agentic Control Planes technologies">
+              <ul class="focus__tools" aria-label="AI control platform technologies">
                 <li>LangGraph</li>
                 <li>agentgateway</li>
                 <li>vLLM</li>
@@ -3037,13 +3065,13 @@
             <li class="focus__card">
               <div class="focus__card-header">
                 <span class="rules__index" aria-hidden="true">02</span>
-                <strong>Compliant landing zones</strong>
+                <strong>Compliant cloud foundations</strong>
               </div>
               <span>
-                Hub-and-spoke foundations where Terraform + Sentinel encode PCI-DSS,
-                SOC 2, and NIST—account vending as product, not tickets.
+                Secure multi-account cloud setups where Terraform encodes PCI-DSS,
+                SOC 2, and NIST—teams get resources without opening tickets.
               </span>
-              <ul class="focus__tools" aria-label="Compliant landing zones technologies">
+              <ul class="focus__tools" aria-label="Compliant cloud foundation technologies">
                 <li>Azure</li>
                 <li>AWS</li>
                 <li>GCP</li>
@@ -3062,8 +3090,8 @@
                 <strong>Kubernetes at scale</strong>
               </div>
               <span>
-                Production AKS / OpenShift delivery with Helm, RBAC, and
-                geo-redundancy—proven on financial platforms serving 30M+ users.
+                Production Azure and OpenShift clusters with Helm, access control, and
+                redundancy—used on financial platforms serving 30M+ people.
               </span>
               <ul class="focus__tools" aria-label="Kubernetes at scale technologies">
                 <li>Kubernetes</li>
@@ -3088,8 +3116,8 @@
                 <span class="section-tag__dot section-tag__dot--pulse"></span>
                 <span>Get In Touch</span>
               </div>
-              <h2 id="contact-title">Ready to ship. <em>Let’s talk.</em></h2>
-              <p>Direct email or thirty minutes on the calendar—no forms, no gatekeeping.</p>
+              <h2 id="contact-title">Ready to chat. <em>Let's connect.</em></h2>
+              <p>Email me directly or book 30 minutes—no forms.</p>
             </div>
             <div class="contact__actions">
               <a class="btn btn--primary" href="mailto:brandonegallagher@gmail.com">
