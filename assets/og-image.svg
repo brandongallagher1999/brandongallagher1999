@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle ogDesc">
+  <title id="ogTitle">Brandon Gallagher - AI Platform Engineer</title>
+  <desc id="ogDesc">Deterministic agentic control planes and compliant landing zones.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0507"/>
+      <stop offset="0.45" stop-color="#3b0712"/>
+      <stop offset="1" stop-color="#0c0507"/>
+    </linearGradient>
+    <radialGradient id="nebulaA" cx="78%" cy="22%" r="55%">
+      <stop offset="0" stop-color="#e11d48" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#881337" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0c0507" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebulaB" cx="18%" cy="78%" r="48%">
+      <stop offset="0" stop-color="#fb7185" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#0c0507" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb4c0"/>
+      <stop offset="1" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffe4e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#nebulaA)"/>
+  <rect width="1200" height="630" fill="url(#nebulaB)"/>
+  <g opacity="0.35" stroke="#ffb4c0" stroke-width="1">
+    <path d="M0 105 H1200 M0 210 H1200 M0 315 H1200 M0 420 H1200 M0 525 H1200"/>
+    <path d="M150 0 V630 M300 0 V630 M450 0 V630 M600 0 V630 M750 0 V630 M900 0 V630 M1050 0 V630"/>
+  </g>
+  <g transform="translate(900 290)">
+    <ellipse cx="0" cy="0" rx="220" ry="72" fill="none" stroke="#ffb4c0" stroke-opacity="0.35" stroke-width="2" transform="rotate(-22)"/>
+    <ellipse cx="0" cy="0" rx="160" ry="52" fill="none" stroke="#fb7185" stroke-opacity="0.25" stroke-width="1.5" transform="rotate(-12)"/>
+    <circle cx="0" cy="0" r="42" fill="url(#accent)"/>
+    <circle cx="-12" cy="-12" r="14" fill="#fff5f6" fill-opacity="0.45"/>
+  </g>
+  <g transform="translate(96 118)">
+    <text fill="#ffe8ec" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="0.14em">BRANDON GALLAGHER</text>
+    <text y="92" fill="url(#titleGrad)" font-family="Instrument Serif, Georgia, serif" font-size="72" font-weight="400">AI Platform Engineer</text>
+    <text y="158" fill="#fffbfb" fill-opacity="0.92" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="28" font-weight="400">Deterministic agentic control planes</text>
+    <text y="198" fill="#fffbfb" fill-opacity="0.92" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="28" font-weight="400">for high-consequence financial systems</text>
+    <rect y="248" width="120" height="4" rx="2" fill="url(#accent)"/>
+    <text y="292" fill="#ffe8ec" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="22" font-weight="500">brandongallagher.com</text>
+  </g>
+</svg>
